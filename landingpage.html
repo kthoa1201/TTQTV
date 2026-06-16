@@ -281,33 +281,61 @@
         <div class="container">
             <h2 class="section-title">Nhận Tư Vấn & Lịch Tuyển Sinh</h2>
             <div class="form-box">
-                <form id="landingForm">
+              <form id="landingForm" class="registration-form">
                     <div class="form-group">
-                        <label for="name">Họ và Tên *</label>
-                        <input type="text" id="name" class="form-control" placeholder="Ví dụ: Nguyễn Văn A">
-                        <div class="error-msg" id="nameErr">Vui lòng điền họ tên của bạn</div>
+                        <label for="name">Họ và Tên <span class="required">*</span></label>
+                        <input type="text" id="name" placeholder="Ví dụ: Nguyễn Văn A">
+                        <span class="error-msg" id="nameErr">Vui lòng nhập họ và tên</span>
                     </div>
+
                     <div class="form-group">
-                        <label for="phone">Số Điện Thoại *</label>
-                        <input type="tel" id="phone" class="form-control" placeholder="Ví dụ: 0912345678">
-                        <div class="error-msg" id="phoneErr">Số điện thoại không hợp lệ (yêu cầu 10 số)</div>
+                        <label for="dob">Ngày tháng năm sinh <span class="required">*</span></label>
+                        <input type="date" id="dob">
+                        <span class="error-msg" id="dobErr">Vui lòng chọn ngày tháng năm sinh</span>
                     </div>
+
                     <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input type="email" id="email" class="form-control" placeholder="Ví dụ: name@gmail.com">
-                        <div class="error-msg" id="emailErr">Email không hợp lệ</div>
+                        <label for="phone">Số điện thoại <span class="required">*</span></label>
+                        <input type="tel" id="phone" placeholder="Ví dụ: 0912345678">
+                        <span class="error-msg" id="phoneErr">Số điện thoại không hợp lệ (phải gồm 10 số VN)</span>
                     </div>
-                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">GỬI YÊU CẦU ĐĂNG KÝ</button>
+
+                    <div class="form-group">
+                        <label for="majorTarget">Ngành muốn học <span class="required">*</span></label>
+                        <select id="majorTarget">
+                            <option value="">-- Chọn ngành muốn đăng ký học --</option>
+                            <option value="cntt">Công nghệ thông tin</option>
+                            <option value="qtkd">Quản trị kinh doanh</option>
+                            <option value="ngonngu">Ngôn ngữ Anh</option>
+                            <option value="marketing">Digital Marketing</option>
+                        </select>
+                        <span class="error-msg" id="majorTargetErr">Vui lòng chọn ngành muốn học</span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="majorGraduated">Ngành đã tốt nghiệp <span class="required">*</span></label>
+                        <input type="text" id="majorGraduated" placeholder="Ví dụ: Cử nhân Kế toán / Kỹ thuật phần mềm">
+                        <span class="error-msg" id="majorGraduatedErr">Vui lòng nhập ngành đã tốt nghiệp</span>
+                    </div>
+
+                    <div class="form-group signup-radio-group">
+                        <label>Đã có chứng chỉ tiếng Anh B1 chưa? <span class="required">*</span></label>
+                        <div class="radio-options">
+                            <label class="radio-label">
+                                <input type="radio" name="b1Certificate" value="da-co"> Đã có
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="b1Certificate" value="chua-co"> Chưa có
+                            </label>
+                        </div>
+                        <span class="error-msg" id="b1Err">Vui lòng xác nhận trạng thái chứng chỉ B1</span>
+                    </div>
+                    <button type="submit" class="submit-btn">Đăng Ký </button>
                 </form>
             </div>
         </div>
     </section>
-
-    <footer>
-        <p>© 2026 Viện Đào Tạo Sau Đại Học. Bảo lưu mọi quyền.</p>
-    </footer>
-
-   <div class="floating-contact">
+    <div class="floating-contact">
         <a href="https://zalo.me/0912345678" target="_blank" class="float-btn float-zalo" title="Chat Zalo ngay">
             <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
         </a>
@@ -320,6 +348,17 @@
 
         <button id="backToTop" class="float-btn" title="Về đầu trang">▲</button>
     </div>
+    <div id="toastNotification" class="toast">
+        <div class="toast-icon">🎉</div>
+        <div class="toast-body">
+            <p id="toastText">Anh Trần Văn K. vừa đăng ký tư vấn thành công!</p>
+            <span class="toast-time">Cách đây vài giây</span>
+        </div>
+    </div>
+    <footer>
+        <p>© 2026 Viện Đào Tạo Sau Đại Học. Bảo lưu mọi quyền.</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>

@@ -786,3 +786,112 @@ footer {
     background-color: #00c2cb;
     transform: scale(1.1); /* Đồng bộ hiệu ứng phóng to nhẹ khi hover giống 2 nút trên */
 }
+.toast {
+    position: fixed;
+    bottom: 30px;
+    left: -350px; /* Mặc định giấu bên ngoài màn hình */
+    background-color: #ffffff;
+    color: #1d2731;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-left: 5px solid #22c55e; /* Vạch xanh lá báo thành công */
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Hiệu ứng trượt đàn hồi */
+    z-index: 9999;
+    width: 320px;
+}
+.toast.show {
+    left: 30px; /* Trượt vào màn hình */
+}
+.toast-icon { font-size: 1.5rem; }
+.toast-body p { font-size: 0.9rem; font-weight: 600; margin: 0; }
+.toast-time { font-size: 0.75rem; color: #888; }
+/* Tinh chỉnh bố cục Form Đăng ký mới */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+.form-group .required {
+    color: #ef4444; /* Dấu sao đỏ báo bắt buộc điền */
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+/* Hiệu ứng đổi viền sang màu xanh chủ đạo khi bấm vào ô nhập */
+.form-group input:focus,
+.form-group select:focus {
+    border-color: var(--secondary-color);
+}
+
+/* Khu vực chọn nút tròn Radio */
+.radio-options {
+    display: flex;
+    gap: 25px;
+    margin-top: 5px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-weight: normal !important;
+}
+
+/* Định dạng dòng chữ báo lỗi màu đỏ */
+.error-msg {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none; /* Mặc định ẩn, chỉ hiện khi JS kích hoạt */
+}
+/* ĐỊNH DẠNG NÚT ĐĂNG KÝ TƯ VẤN - TÔNG XANH BIỂN ĐỒNG BỘ */
+.submit-btn {
+    width: 100%; /* Kéo dài bằng các ô nhập liệu phía trên */
+    background-color: #0066cc; /* Màu xanh biển đậm đà, sang trọng */
+    color: #ffffff; /* Chữ trắng nổi bật */
+    padding: 14px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 6px; /* Bo góc mượt mà */
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 102, 204, 0.2); /* Đổ bóng nhẹ theo tông xanh biển */
+    transition: all 0.3s ease; /* Hiệu ứng mượt mà khi hover */
+    margin-top: 15px;
+    display: block;
+}
+
+/* Hiệu ứng khi di chuột vào nút (Hover) */
+.submit-btn:hover {
+    background-color: #0052a3; /* Màu xanh biển sậm hơn một chút khi tương tác */
+    transform: translateY(-2px); /* Nút nhích nhẹ lên tạo cảm giác nổi */
+    box-shadow: 0 6px 12px rgba(0, 82, 163, 0.3);
+}
+
+/* Hiệu ứng khi ấn giữ nút (Active) */
+.submit-btn:active {
+    transform: translateY(0); /* Nút lún xuống lại khi bấm click */
+}

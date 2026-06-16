@@ -1,7 +1,3 @@
-/* ==========================================================================
-   script.js - Bộ Điều Khiển Tính Năng Landing Page 2026 (Bản chuẩn hóa)
-   ========================================================================== */
-
 // 1. CHỨC NĂNG TRƯỢT MƯỢT (SMOOTH SCROLL TO SECTION)
 function scrollToSection(sectionId) {
     const section = document.getElementById(sectionId);
@@ -64,14 +60,14 @@ function updateCountdown() {
 const countdownInterval = setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// 4. XỬ LÝ ĐĂNG KÝ FORM (FORM VALIDATION)
+// 4. XỬ LÝ ĐĂNG KÝ FORM (MỚI TOÀN DIỆN)
 const landingForm = document.getElementById("landingForm");
 if (landingForm) {
     landingForm.addEventListener("submit", function (e) {
         e.preventDefault(); // Chặn tải lại trang mặc định
         let valid = true;
 
-        // Kiểm tra Họ Tên
+        // 1. Kiểm tra Họ Tên
         const name = document.getElementById("name");
         const nameErr = document.getElementById("nameErr");
         if (name && name.value.trim() === "") {
@@ -81,7 +77,17 @@ if (landingForm) {
             nameErr.style.display = "none";
         }
 
-        // Kiểm tra Số Điện Thoại (10 số VN)
+        // 2. Kiểm tra Ngày sinh
+        const dob = document.getElementById("dob");
+        const dobErr = document.getElementById("dobErr");
+        if (dob && dob.value === "") {
+            dobErr.style.display = "block";
+            valid = false;
+        } else if (dobErr) {
+            dobErr.style.display = "none";
+        }
+
+        // 3. Kiểm tra Số Điện Thoại (10 số VN)
         const phone = document.getElementById("phone");
         const phoneErr = document.getElementById("phoneErr");
         const phoneRegex = /^(0[3|5|7|8|9])+([0-9]{8})$/;
@@ -92,21 +98,49 @@ if (landingForm) {
             phoneErr.style.display = "none";
         }
 
-        // Kiểm tra Email
-        const email = document.getElementById("email");
-        const emailErr = document.getElementById("emailErr");
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (email && !emailRegex.test(email.value.trim())) {
-            emailErr.style.display = "block";
+        // 4. Kiểm tra Ngành muốn học
+        const majorTarget = document.getElementById("majorTarget");
+        const majorTargetErr = document.getElementById("majorTargetErr");
+        if (majorTarget && majorTarget.value === "") {
+            majorTargetErr.style.display = "block";
             valid = false;
-        } else if (emailErr) {
-            emailErr.style.display = "none";
+        } else if (majorTargetErr) {
+            majorTargetErr.style.display = "none";
         }
 
-        // Nếu hợp lệ thông tin
+        // 5. Kiểm tra Ngành đã tốt nghiệp
+        const majorGraduated = document.getElementById("majorGraduated");
+        const majorGraduatedErr = document.getElementById("majorGraduatedErr");
+        if (majorGraduated && majorGraduated.value.trim() === "") {
+            majorGraduatedErr.style.display = "block";
+            valid = false;
+        } else if (majorGraduatedErr) {
+            majorGraduatedErr.style.display = "none";
+        }
+
+        // 6. Kiểm tra Chứng chỉ B1 (Radio Button)
+        const b1Options = document.getElementsByName("b1Certificate");
+        const b1Err = document.getElementById("b1Err");
+        let b1Checked = false;
+        
+        for (const option of b1Options) {
+            if (option.checked) {
+                b1Checked = true;
+                break;
+            }
+        }
+
+        if (!b1Checked && b1Err) {
+            b1Err.style.display = "block";
+            valid = false;
+        } else if (b1Err) {
+            b1Err.style.display = "none";
+        }
+
+        // Nếu TẤT CẢ thông tin đều hợp lệ
         if (valid) {
-            alert("Hệ thống đã ghi nhận thông tin đăng ký thạc sĩ thành công! Ban tư vấn tuyển sinh sẽ chủ động liên hệ lại bạn sớm nhất.");
-            this.reset(); // Xóa trống Form
+            alert("Hệ thống đã ghi nhận thông tin đăng ký thành công! Ban tư vấn tuyển sinh sẽ chủ động liên hệ lại bạn sớm nhất.");
+            this.reset(); // Xóa trống toàn bộ Form để người khác điền tiếp
         }
     });
 }
@@ -202,3 +236,36 @@ if (backToTopBtn) {
         });
     }
 }
+// Danh sách tên ngẫu nhiên để tạo độ tin cậy
+const vips = [
+    "Chị Nguyễn Thị M. (Quảng Ngãi)", 
+    "Anh Lê Hoàng N. (BKC)", 
+    "Anh Phạm Minh T.", 
+    "Chị Trần Kim T.", 
+    "Anh Vũ Hoàng L."
+];
+
+function showFakeNotification() {
+    const toast = document.getElementById("toastNotification");
+    const toastText = document.getElementById("toastText");
+
+    if (toast && toastText) {
+        // Chọn ngẫu nhiên một cái tên trong mảng
+        const randomName = vips[Math.floor(Math.random() * vips.length)];
+        toastText.innerText = `${randomName} vừa đăng ký tư vấn thành công!`;
+
+        // Hiện lên
+        toast.classList.add("show");
+
+        // Ẩn đi sau 4 giây
+        setTimeout(() => {
+            toast.classList.remove("show");
+        }, 4000);
+    }
+}
+
+// Cứ sau mỗi 20 giây sẽ tự động kích hoạt thông báo một lần
+setInterval(showFakeNotification, 20000);
+
+// Kích hoạt lần đầu tiên sau khi load trang 5 giây
+setTimeout(showFakeNotification, 5000);
