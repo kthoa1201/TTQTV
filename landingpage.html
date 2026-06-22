@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tuyển Sinh Thạc Sĩ - Quốc Tế Việt</title>
-    
+
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
 
     <nav class="navbar">
@@ -17,7 +19,7 @@
                 <li><a onclick="scrollToSection('gioi-thieu')">Giới Thiệu</a></li>
                 <li><a onclick="scrollToSection('nganh-dao-tao')">Ngành Đào Tạo</a></li>
                 <li><a onclick="scrollToSection('danh-gia')">Đánh Giá</a></li>
-                <li><a onclick="scrollToSection('lien-he')">Liên Hệ</a></li>
+                <button class="btn" onclick="scrollToSection('lien-he')">ĐĂNG KÝ XÉT TUYỂN NGAY</button>
             </ul>
         </div>
     </nav>
@@ -26,7 +28,7 @@
         <div class="container">
             <h1>BỨT PHÁ SỰ NGHIỆP TRONG KỶ NGUYÊN SỐ</h1>
             <p>Chương trình Cao học chuẩn Quốc tế – Lịch học linh hoạt tối ưu cho người bận rộn</p>
-            
+
             <div class="countdown-container">
                 <div class="countdown-box">
                     <span class="countdown-time" id="days">00</span>
@@ -56,15 +58,24 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>Môi trường đào tạo cao học thực chiến</h3>
-                    <p>Viện Sau Đại học luôn đi đầu trong việc cung cấp các chương trình đào tạo Thạc sĩ ứng dụng cao. Chúng tôi không chỉ cung cấp tri thức hàn lâm thuần túy, mà tập trung cải tiến năng lực quản trị, giải quyết triệt để các thách thức kinh doanh thực tế toàn cầu.</p>
-                    <p style="margin-top: 15px;">Hơn 85% học viên tốt nghiệp hiện đang nắm giữ các vị trí quản lý cốt lõi, Giám đốc điều hành tại các doanh nghiệp và tập đoàn công nghệ lớn.</p>
+                    <p>Viện Sau Đại học luôn đi đầu trong việc cung cấp các chương trình đào tạo Thạc sĩ ứng dụng cao.
+                        Chúng tôi không chỉ cung cấp tri thức hàn lâm thuần túy, mà tập trung cải tiến năng lực quản
+                        trị, giải quyết triệt để các thách thức kinh doanh thực tế toàn cầu.</p>
+                    <p style="margin-top: 15px;">Hơn 85% học viên tốt nghiệp hiện đang nắm giữ các vị trí quản lý cốt
+                        lõi, Giám đốc điều hành tại các doanh nghiệp và tập đoàn công nghệ lớn.</p>
                 </div>
-                
+
                 <div class="slider-container">
                     <div class="slider-wrapper" id="sliderWrapper">
-                        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600');"></div>
-                        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600');"></div>
-                        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600');"></div>
+                        <div class="slide"
+                            style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600');">
+                        </div>
+                        <div class="slide"
+                            style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600');">
+                        </div>
+                        <div class="slide"
+                            style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600');">
+                        </div>
                     </div>
                     <button class="slide-btn prev" onclick="moveSlide(-1)">&#10094;</button>
                     <button class="slide-btn next" onclick="moveSlide(1)">&#10095;</button>
@@ -79,37 +90,43 @@
                 <div class="card">
                     <h3>Quản Trị Giáo Dục</h3>
                     <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Đào tạo tư duy chiến lược về xây dựng chương trình, quản lý nhân sự và vận hành tối ưu các tổ chức giáo dục hiện đại trong kỷ nguyên số.</p>
+                    <p>Đào tạo tư duy chiến lược về xây dựng chương trình, quản lý nhân sự và vận hành tối ưu các tổ
+                        chức giáo dục hiện đại trong kỷ nguyên số.</p>
                 </div>
 
                 <div class="card">
                     <h3>Tâm Lý Học</h3>
                     <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Nghiên cứu sâu về hành vi và tư duy con người, trang bị kỹ năng tham vấn, trị liệu chuyên nghiệp và ứng dụng thấu hiểu tâm lý trong quản trị.</p>
+                    <p>Nghiên cứu sâu về hành vi và tư duy con người, trang bị kỹ năng tham vấn, trị liệu chuyên nghiệp
+                        và ứng dụng thấu hiểu tâm lý trong quản trị.</p>
                 </div>
 
                 <div class="card">
                     <h3>Sư Phạm</h3>
                     <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Nâng cao năng lực giảng dạy tích hợp công nghệ giáo dục (EdTech) tiên tiến, giúp phát triển tư duy sáng tạo và dẫn dắt thế hệ trẻ hội nhập.</p>
+                    <p>Nâng cao năng lực giảng dạy tích hợp công nghệ giáo dục (EdTech) tiên tiến, giúp phát triển tư
+                        duy sáng tạo và dẫn dắt thế hệ trẻ hội nhập.</p>
                 </div>
 
                 <div class="card">
                     <h3>Kinh Tế</h3>
                     <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Làm chủ quy luật thị trường, rèn luyện kỹ năng phân tích dữ liệu vĩ mô và hoạch định chính sách chiến lược cho doanh nghiệp hoặc tổ chức.</p>
+                    <p>Làm chủ quy luật thị trường, rèn luyện kỹ năng phân tích dữ liệu vĩ mô và hoạch định chính sách
+                        chiến lược cho doanh nghiệp hoặc tổ chức.</p>
                 </div>
 
                 <div class="card">
                     <h3>Công Nghệ Thông Tin</h3>
                     <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Chuyên sâu về Trí tuệ nhân tạo (AI), Khoa học dữ liệu và Bảo mật hệ thống, đón đầu xu hướng chuyển đổi số toàn cầu.</p>
+                    <p>Chuyên sâu về Trí tuệ nhân tạo (AI), Khoa học dữ liệu và Bảo mật hệ thống, đón đầu xu hướng
+                        chuyển đổi số toàn cầu.</p>
                 </div>
 
                 <div class="card">
                     <h3>Quản Trị Kinh Doanh</h3>
                     <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Phát triển năng lực lãnh đạo toàn diện, tối ưu hóa mô hình kinh doanh, quản trị dòng tiền và chiến lược marketing thực chiến.</p>
+                    <p>Phát triển năng lực lãnh đạo toàn diện, tối ưu hóa mô hình kinh doanh, quản trị dòng tiền và
+                        chiến lược marketing thực chiến.</p>
                 </div>
             </div>
         </div>
@@ -138,7 +155,9 @@
     </section>
     <section class="partners">
         <div class="container">
-            <p style="text-align: center; margin-bottom: 25px; color: #64748b; font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">Đối tác chiến lược & Liên kết đào tạo</p>
+            <p
+                style="text-align: center; margin-bottom: 25px; color: #64748b; font-weight: 600; font-size: 0.9rem; text-transform: uppercase;">
+                Đối tác chiến lược & Liên kết đào tạo</p>
             <div class="partner-logos">
                 <span>[ VINAGROUP ]</span>
                 <span>[ TECHCOMBANK ]</span>
@@ -150,7 +169,8 @@
     <section class="incentives" style="background-color: var(--white);">
         <div class="container">
             <h2 class="section-title">Tài Nguyên Miễn Phí Dành Cho Bạn</h2>
-            <div class="about-content"> <div class="incentive-video" style="flex: 1; min-width: 350px;">
+            <div class="about-content">
+                <div class="incentive-video" style="flex: 1; min-width: 350px;">
                     <div class="video-placeholder">
                         <span class="play-icon">▶</span>
                         <p>Xem thử bài giảng: "Quản trị Chiến lược trong Kỷ nguyên Số"</p>
@@ -160,7 +180,9 @@
 
                 <div class="incentive-text" style="flex: 1; min-width: 350px;">
                     <h3>Đặc quyền tháng này!</h3>
-                    <p style="margin-bottom: 20px;">Đăng ký nhận ngay trọn bộ Ebook <strong>"Cẩm nang Sống sót qua mùa Cao học dành cho Người bận rộn"</strong> do các cựu học viên xuất sắc biên soạn độc quyền.</p>
+                    <p style="margin-bottom: 20px;">Đăng ký nhận ngay trọn bộ Ebook <strong>"Cẩm nang Sống sót qua mùa
+                            Cao học dành cho Người bận rộn"</strong> do các cựu học viên xuất sắc biên soạn độc quyền.
+                    </p>
                     <ul style="list-style: none; margin-bottom: 25px;">
                         <li style="margin-bottom: 10px;">⭐ Mẹo sắp xếp thời gian học và làm việc</li>
                         <li style="margin-bottom: 10px;">⭐ Đề cương ôn tập các môn cơ sở</li>
@@ -194,7 +216,8 @@
             <h2 class="section-title">Học Viên Nói Gì Về Chúng Tôi?</h2>
             <div class="grid-3">
                 <div class="review-card">
-                    <p class="review-text">"Lịch học cuối tuần kết hợp online cực kỳ tối ưu giúp tôi vừa hoàn thành tốt công việc điều hành tại công ty vừa lấy được tấm bằng Thạc sĩ danh giá."</p>
+                    <p class="review-text">"Lịch học cuối tuần kết hợp online cực kỳ tối ưu giúp tôi vừa hoàn thành tốt
+                        công việc điều hành tại công ty vừa lấy được tấm bằng Thạc sĩ danh giá."</p>
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">TH</div>
                         <div class="reviewer-name">
@@ -204,7 +227,8 @@
                     </div>
                 </div>
                 <div class="review-card">
-                    <p class="review-text">"Các case-study trong chương trình học CNTT cực kỳ sát với các dự án lớn ngoài đời thực. Giảng viên hướng dẫn rất tận tình."</p>
+                    <p class="review-text">"Các case-study trong chương trình học CNTT cực kỳ sát với các dự án lớn
+                        ngoài đời thực. Giảng viên hướng dẫn rất tận tình."</p>
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">MT</div>
                         <div class="reviewer-name">
@@ -216,13 +240,13 @@
             </div>
         </div>
     </section>
-   
-    
-     <section id="lien-he" class="contact">
+
+
+    <section id="lien-he" class="contact">
         <div class="container">
             <h2 class="section-title">Nhận Tư Vấn & Lịch Tuyển Sinh</h2>
             <div class="form-box">
-              <form id="landingForm" class="registration-form">
+                <form id="landingForm" class="registration-form">
                     <div class="form-group">
                         <label for="name">Họ và Tên <span class="required">*</span></label>
                         <input type="text" id="name" placeholder="Ví dụ: Nguyễn Văn A">
@@ -276,18 +300,19 @@
             </div>
         </div>
     </section>
-     <section class="faqs">
+    <section class="faqs">
         <div class="container">
             <h2 class="section-title">Giải Đáp Thắc Mắc</h2>
             <div class="faq-wrapper">
-                
+
                 <div class="faq-item">
                     <div class="faq-question" onclick="toggleFaq(this)">
                         <h3>Học trái ngành thì có đăng ký học Thạc sĩ được không?</h3>
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Hoàn toàn được. Học viên tốt nghiệp đại học ngành khác sẽ được hướng dẫn học bổ sung kiến thức từ 3 - 5 môn nền tảng trước khi bước vào chương trình đào tạo chính thức.</p>
+                        <p>Hoàn toàn được. Học viên tốt nghiệp đại học ngành khác sẽ được hướng dẫn học bổ sung kiến
+                            thức từ 3 - 5 môn nền tảng trước khi bước vào chương trình đào tạo chính thức.</p>
                     </div>
                 </div>
 
@@ -297,7 +322,8 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Nhằm tạo điều kiện tốt nhất cho người đi làm, nhà trường áp dụng phương thức xét tuyển hồ sơ năng lực và phỏng vấn chuyên môn, không áp dụng thi tuyển căng thẳng.</p>
+                        <p>Nhằm tạo điều kiện tốt nhất cho người đi làm, nhà trường áp dụng phương thức xét tuyển hồ sơ
+                            năng lực và phỏng vấn chuyên môn, không áp dụng thi tuyển căng thẳng.</p>
                     </div>
                 </div>
 
@@ -307,7 +333,9 @@
                         <span class="faq-toggle">+</span>
                     </div>
                     <div class="faq-answer">
-                        <p>Không. Theo quy định mới nhất của Bộ Giáo dục và Đào tạo, bằng Thạc sĩ chính quy không ghi hình thức đào tạo, có giá trị quốc gia và đủ điều kiện để bạn tiếp tục làm nghiên cứu sinh (Tiến sĩ).</p>
+                        <p>Không. Theo quy định mới nhất của Bộ Giáo dục và Đào tạo, bằng Thạc sĩ chính quy không ghi
+                            hình thức đào tạo, có giá trị quốc gia và đủ điều kiện để bạn tiếp tục làm nghiên cứu sinh
+                            (Tiến sĩ).</p>
                     </div>
                 </div>
 
@@ -316,12 +344,15 @@
     </section>
     <div class="floating-contact">
         <a href="https://id.zalo.me/0963914979" target="_blank" class="float-btn float-zalo" title="Chat Zalo ngay">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo"
+                style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
         </a>
-        
-        <a href="tel:0963914979" class="float-btn float-phone" title="Gọi tư vấn ngay" style="background-color: #22c55e; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+
+        <a href="tel:0963914979" class="float-btn float-phone" title="Gọi tư vấn ngay"
+            style="background-color: #22c55e; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" style="width: 24px; height: 24px;">
-                <path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27 11.72 11.72 0 0 0 3.67 1.21 1 1 0 0 1 .82 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 .82 11.72 11.72 0 0 0 1.21 3.67 1 1 0 0 1-.27 1.11l-2.22 2.2z"/>
+                <path
+                    d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27 11.72 11.72 0 0 0 3.67 1.21 1 1 0 0 1 .82 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 .82 11.72 11.72 0 0 0 1.21 3.67 1 1 0 0 1-.27 1.11l-2.22 2.2z" />
             </svg>
         </a>
 
@@ -335,10 +366,11 @@
         </div>
     </div>
     <footer>
-       
+
         <p>© 2026 Viện Đào Tạo Sau Đại Học. Bảo lưu mọi quyền.</p>
     </footer>
 
     <script src="script.js"></script>
 </body>
+
 </html>
