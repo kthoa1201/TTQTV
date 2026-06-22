@@ -7,23 +7,28 @@
 }
 
 :root {
-    --primary-color: #0b3c5d;    /* Xanh biển đậm (Deep Ocean) - Dành cho thanh menu, tiêu đề, nền khối lớn */
-    --secondary-color: #328cc1;  /* Xanh biển sáng (Ocean Blue) - Dành cho nút bấm, điểm nhấn, đếm ngược, icon */
-    --text-color: #1d2731;       /* Xám xanh đậm - Dành cho chữ để đọc dễ chịu, không bị đen kịt */
-    --bg-light: #f4f7f6;         /* Xám trắng mát - Dành cho nền của các section xen kẽ */
+    --primary-color: #0b3c5d;
+    /* Xanh biển đậm (Deep Ocean) - Dành cho thanh menu, tiêu đề, nền khối lớn */
+    --secondary-color: #328cc1;
+    /* Xanh biển sáng (Ocean Blue) - Dành cho nút bấm, điểm nhấn, đếm ngược, icon */
+    --text-color: #1d2731;
+    /* Xám xanh đậm - Dành cho chữ để đọc dễ chịu, không bị đen kịt */
+    --bg-light: #f4f7f6;
+    /* Xám trắng mát - Dành cho nền của các section xen kẽ */
     --white: #ffffff;
-    --nav-height: 70px;          
+    --nav-height: 70px;
 }
 
 html {
-   scroll-behavior: smooth;   /* Cuộn mượt */
+    scroll-behavior: smooth;
+    /* Cuộn mượt */
 }
 
 body {
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--white);
-    padding-top: var(--nav-height); 
+    padding-top: var(--nav-height);
 }
 
 a {
@@ -88,7 +93,7 @@ a {
 /* --- 3. GLOBAL LAYOUTS & COMPONENTS --- */
 section {
     padding: 80px 0;
-    scroll-margin-top: var(--nav-height); 
+    scroll-margin-top: var(--nav-height);
 }
 
 .container {
@@ -135,8 +140,8 @@ section {
 
 /* --- 4. SECTION: TRANG CHỦ (HERO) & COUNTDOWN --- */
 .hero {
-    background: linear-gradient(rgba(11, 60, 93, 0.85), rgba(11, 60, 93, 0.85)), 
-                url('đường-dẫn-ảnh-của-bạn.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(11, 60, 93, 0.85), rgba(11, 60, 93, 0.85)),
+        url('đường-dẫn-ảnh-của-bạn.jpg') no-repeat center center/cover;
     color: var(--white);
     text-align: center;
     padding: 120px 20px;
@@ -225,7 +230,7 @@ section {
 
 .slider-wrapper {
     display: flex;
-    width: 300%; 
+    width: 300%;
     height: 100%;
     transition: transform 0.6s cubic-bezier(0.42, 0, 0.58, 1);
 }
@@ -258,8 +263,13 @@ section {
     background: rgba(15, 23, 42, 0.9);
 }
 
-.prev { left: 15px; }
-.next { right: 15px; }
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
 
 
 /* --- 6. KHỐI SỐ LIỆU THỐNG KÊ (COUNTERS) --- */
@@ -299,7 +309,7 @@ section {
 .card:hover {
     transform: translateY(-8px);
     box-shadow: 0 15px 30px rgba(15, 23, 42, 0.1);
-    border-top-color: var(--secondary-color); 
+    border-top-color: var(--secondary-color);
 }
 
 .card h3 {
@@ -414,14 +424,15 @@ section {
     color: #ef4444;
     font-size: 0.85rem;
     margin-top: 6px;
-    display: none; 
+    display: none;
 }
 
 
 /* 1. Điều chỉnh lại nút Zalo & nút Gọi để hiển thị ảnh trọn vẹn, tràn viền nút */
-.float-zalo, .float-phone {
-    background-color: transparent; 
-    padding: 0; 
+.float-zalo,
+.float-phone {
+    background-color: transparent;
+    padding: 0;
     border: none;
     overflow: hidden;
 }
@@ -438,8 +449,9 @@ section {
     font-size: 1.4rem;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
     transition: transform 0.3s ease;
-    animation: pulse 2s infinite; 
-    margin-bottom: 15px; /* Tạo khoảng cách giữa nút Zalo và nút Gọi */
+    animation: pulse 2s infinite;
+    margin-bottom: 15px;
+    /* Tạo khoảng cách giữa nút Zalo và nút Gọi */
 }
 
 .float-btn:hover {
@@ -460,23 +472,29 @@ section {
 @keyframes pulse {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); /* Vòng sáng bắt đầu lan tỏa */
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+        /* Vòng sáng bắt đầu lan tỏa */
     }
+
     70% {
         transform: scale(1.05);
-        box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); /* Vòng sáng rộng ra và mờ dần */
+        box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+        /* Vòng sáng rộng ra và mờ dần */
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
     }
 }
+
 /* --- 11. KHỐI ĐỐI TÁC, CAM KẾT, FAQS & ROADMAP MỚI --- */
 .partners {
     background-color: var(--white);
     padding: 50px 0;
     border-bottom: 1px solid #e2e8f0;
 }
+
 .partner-logos {
     display: flex;
     justify-content: space-around;
@@ -485,6 +503,7 @@ section {
     gap: 30px;
     opacity: 0.6;
 }
+
 .partner-logos span {
     font-size: 1.3rem;
     font-weight: 700;
@@ -495,18 +514,21 @@ section {
 .commitments {
     background-color: var(--bg-light);
 }
+
 .commit-card {
     background: var(--white);
     padding: 30px;
     border-radius: 8px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
 }
+
 .commit-icon {
     font-size: 2.5rem;
     margin-bottom: 15px;
     display: inline-block;
 }
+
 .commit-card h3 {
     color: var(--primary-color);
     margin-bottom: 10px;
@@ -516,14 +538,17 @@ section {
 .faqs {
     background-color: var(--white);
 }
+
 .faq-wrapper {
     max-width: 800px;
     margin: 0 auto;
 }
+
 .faq-item {
     border-bottom: 1px solid #e2e8f0;
     padding: 15px 0;
 }
+
 .faq-question {
     display: flex;
     justify-content: space-between;
@@ -531,16 +556,19 @@ section {
     cursor: pointer;
     padding: 10px 0;
 }
+
 .faq-question h3 {
     font-size: 1.1rem;
     color: var(--primary-color);
     font-weight: 600;
 }
+
 .faq-toggle {
     font-size: 1.2rem;
     transition: transform 0.3s;
     color: var(--secondary-color);
 }
+
 .faq-answer {
     max-height: 0;
     overflow: hidden;
@@ -549,10 +577,12 @@ section {
     font-size: 0.95rem;
     padding-right: 20px;
 }
+
 .faq-item.active .faq-answer {
     max-height: 200px;
     margin-top: 10px;
 }
+
 .faq-item.active .faq-toggle {
     transform: rotate(45deg);
 }
@@ -562,8 +592,9 @@ section {
     padding: 40px 30px;
     border-radius: 8px;
     position: relative;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
 }
+
 .step-number {
     font-size: 3rem;
     font-weight: 900;
@@ -573,6 +604,7 @@ section {
     right: 20px;
     line-height: 1;
 }
+
 .roadmap-step h3 {
     color: var(--primary-color);
     margin-bottom: 12px;
@@ -586,6 +618,7 @@ section {
     border-radius: 8px;
     border: 1px solid #e2e8f0;
 }
+
 .faculty-avatar {
     width: 90px;
     height: 90px;
@@ -600,11 +633,13 @@ section {
     margin: 0 auto 20px auto;
     box-shadow: 0 5px 15px rgba(15, 23, 42, 0.2);
 }
+
 .faculty-card h3 {
     color: var(--primary-color);
     font-size: 1.15rem;
     margin-bottom: 8px;
 }
+
 .faculty-title {
     font-size: 0.9rem;
     color: #64748b;
@@ -617,6 +652,7 @@ section {
     transform: translateY(40px);
     transition: all 0.8s ease-out;
 }
+
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
@@ -637,65 +673,65 @@ footer {
 /* --- 14. RESPONSIVE MEDIA QUERIES (TỐI ƯU MOBILE CHUẨN) --- */
 @media (max-width: 768px) {
     .nav-menu {
-        display: none; 
+        display: none;
     }
-    
+
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .hero p {
         font-size: 1rem;
     }
-    
+
     .countdown-container {
         gap: 10px;
     }
-    
+
     .countdown-box {
         min-width: 70px;
         padding: 8px 12px;
     }
-    
+
     .countdown-time {
         font-size: 1.4rem;
     }
-    
+
     section {
         padding: 50px 0;
     }
-    
+
     /* FIX LỖI ĐÈ CHỮ VÀO SLIDER TRÊN DI ĐỘNG */
     .about-content {
         display: flex;
-        flex-direction: column; 
-        gap: 25px; 
+        flex-direction: column;
+        gap: 25px;
     }
-    
+
     .about-text {
         width: 100%;
         min-width: 100%;
-        height: auto; 
+        height: auto;
     }
-    
+
     .slider-container {
         width: 100%;
         min-width: 100%;
-        height: 250px; 
+        height: 250px;
         margin-top: 10px;
     }
 
     /* FIX LỖI MẤT ẢNH TRÊN DI ĐỘNG */
     .slide {
         width: 33.333%;
-        flex-shrink: 0; 
+        flex-shrink: 0;
         height: 100%;
     }
-    
+
     .form-box {
         padding: 25px 20px;
     }
-    
+
     .floating-contact {
         bottom: 20px;
         right: 20px;
@@ -706,8 +742,8 @@ footer {
 .video-placeholder {
     width: 100%;
     height: 250px;
-    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
-                url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600') no-repeat center center/cover;
+    background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)),
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600') no-repeat center center/cover;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -717,19 +753,22 @@ footer {
     text-align: center;
     padding: 20px;
     cursor: pointer;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.05);
     border: 1px solid #e2e8f0;
     transition: transform 0.3s ease;
 }
+
 .video-placeholder:hover {
     transform: scale(1.02);
 }
+
 .play-icon {
     font-size: 3rem;
     color: var(--secondary-color);
     margin-bottom: 10px;
     animation: pulse 2s infinite;
 }
+
 .duration {
     font-size: 0.8rem;
     background: rgba(255, 255, 255, 0.2);
@@ -751,29 +790,31 @@ footer {
         height: 200px;
     }
 }
+
 #backToTop {
     /* 1. XÓA HOẶC CHUYỂN position THÀNH static/inherit ĐỂ NÓ CHỊU SỰ SẮP XẾP CỦA KHUNG CHA */
-    position: static; 
-    
+    position: static;
+
     /* 2. ĐỒNG BỘ KÍCH THƯỚC (Bóp nhỏ lại một chút thành 55px cho bằng nút Zalo và Gọi) */
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    
+
     /* 3. MÀU XANH SÁNG (Màu Cyan hiện đại) */
-    background-color: #00a8cc; 
+    background-color: #00a8cc;
     color: var(--white);
-    
+
     border: none;
     font-size: 1.2rem;
     cursor: pointer;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
-    
+
     /* 4. ẨN/HIỆN ĐỘNG (Dùng display kết hợp trong JS hoặc để mặc định co giãn) */
-    display: none; /* Mặc định ẩn, JS sẽ chuyển thành display: flex khi chạm đáy */
+    display: none;
+    /* Mặc định ẩn, JS sẽ chuyển thành display: flex khi chạm đáy */
     align-items: center;
     justify-content: center;
-    
+
     transition: transform 0.3s ease;
 }
 
@@ -784,31 +825,51 @@ footer {
 
 #backToTop:hover {
     background-color: #00c2cb;
-    transform: scale(1.1); /* Đồng bộ hiệu ứng phóng to nhẹ khi hover giống 2 nút trên */
+    transform: scale(1.1);
+    /* Đồng bộ hiệu ứng phóng to nhẹ khi hover giống 2 nút trên */
 }
+
 .toast {
     position: fixed;
     bottom: 30px;
-    left: -350px; /* Mặc định giấu bên ngoài màn hình */
+    left: -350px;
+    /* Mặc định giấu bên ngoài màn hình */
     background-color: #ffffff;
     color: #1d2731;
     padding: 15px 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     display: flex;
     align-items: center;
     gap: 12px;
-    border-left: 5px solid #22c55e; /* Vạch xanh lá báo thành công */
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Hiệu ứng trượt đàn hồi */
+    border-left: 5px solid #22c55e;
+    /* Vạch xanh lá báo thành công */
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Hiệu ứng trượt đàn hồi */
     z-index: 9999;
     width: 320px;
 }
+
 .toast.show {
-    left: 30px; /* Trượt vào màn hình */
+    left: 30px;
+    /* Trượt vào màn hình */
 }
-.toast-icon { font-size: 1.5rem; }
-.toast-body p { font-size: 0.9rem; font-weight: 600; margin: 0; }
-.toast-time { font-size: 0.75rem; color: #888; }
+
+.toast-icon {
+    font-size: 1.5rem;
+}
+
+.toast-body p {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.toast-time {
+    font-size: 0.75rem;
+    color: #888;
+}
+
 /* Tinh chỉnh bố cục Form Đăng ký mới */
 .form-group {
     margin-bottom: 20px;
@@ -823,7 +884,8 @@ footer {
 }
 
 .form-group .required {
-    color: #ef4444; /* Dấu sao đỏ báo bắt buộc điền */
+    color: #ef4444;
+    /* Dấu sao đỏ báo bắt buộc điền */
 }
 
 .form-group input[type="text"],
@@ -865,33 +927,46 @@ footer {
     color: #ef4444;
     font-size: 0.85rem;
     margin-top: 5px;
-    display: none; /* Mặc định ẩn, chỉ hiện khi JS kích hoạt */
+    display: none;
+    /* Mặc định ẩn, chỉ hiện khi JS kích hoạt */
 }
+
 /* ĐỊNH DẠNG NÚT ĐĂNG KÝ TƯ VẤN - TÔNG XANH BIỂN ĐỒNG BỘ */
 .submit-btn {
-    width: 100%; /* Kéo dài bằng các ô nhập liệu phía trên */
-    background-color: #0066cc; /* Màu xanh biển đậm đà, sang trọng */
-    color: #ffffff; /* Chữ trắng nổi bật */
+    width: 100%;
+    /* Kéo dài bằng các ô nhập liệu phía trên */
+    background-color: #0066cc;
+    /* Màu xanh biển đậm đà, sang trọng */
+    color: #ffffff;
+    /* Chữ trắng nổi bật */
     padding: 14px;
     font-size: 1.1rem;
     font-weight: bold;
     border: none;
-    border-radius: 6px; /* Bo góc mượt mà */
+    border-radius: 6px;
+    /* Bo góc mượt mà */
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 102, 204, 0.2); /* Đổ bóng nhẹ theo tông xanh biển */
-    transition: all 0.3s ease; /* Hiệu ứng mượt mà khi hover */
+    box-shadow: 0 4px 6px rgba(0, 102, 204, 0.2);
+    /* Đổ bóng nhẹ theo tông xanh biển */
+    transition: all 0.3s ease;
+    /* Hiệu ứng mượt mà khi hover */
     margin-top: 15px;
     display: block;
 }
 
 /* Hiệu ứng khi di chuột vào nút (Hover) */
 .submit-btn:hover {
-    background-color: #0052a3; /* Màu xanh biển sậm hơn một chút khi tương tác */
-    transform: translateY(-2px); /* Nút nhích nhẹ lên tạo cảm giác nổi */
+    background-color: #0052a3;
+    /* Màu xanh biển sậm hơn một chút khi tương tác */
+    transform: translateY(-2px);
+    /* Nút nhích nhẹ lên tạo cảm giác nổi */
     box-shadow: 0 6px 12px rgba(0, 82, 163, 0.3);
 }
 
 /* Hiệu ứng khi ấn giữ nút (Active) */
 .submit-btn:active {
-    transform: translateY(0); /* Nút lún xuống lại khi bấm click */
+    transform: translateY(0);
+    /* Nút lún xuống lại khi bấm click */
 }
+
+/*khoa hello kitty*/
