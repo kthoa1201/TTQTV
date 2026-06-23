@@ -489,26 +489,65 @@ section {
 }
 
 /* --- 11. KHỐI ĐỐI TÁC, CAM KẾT, FAQS & ROADMAP MỚI --- */
-.partners {
-    background-color: var(--white);
-    padding: 50px 0;
-    border-bottom: 1px solid #e2e8f0;
+/* --- LÀM ĐẸP SLIDER ĐỐI TÁC (8 KHUNG) --- */
+.partner-slider {
+    width: 100%;
+    overflow: hidden;
+    /* Ẩn các hình chưa được kích hoạt */
+    padding: 10px 0;
 }
 
-.partner-logos {
+.partner-track {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 30px;
-    opacity: 0.6;
+    width: 200%;
+    /* Khối chứa dài gấp đôi để chia làm 2 màn (mỗi màn chiếm 100%) */
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Hiệu ứng lướt cực mượt */
 }
 
-.partner-logos span {
-    font-size: 1.3rem;
+.partner-item {
+    width: 12.5%;
+    /* Vì thanh ray là 200%, nên 1 hình chiếm 1/8 thanh ray = 12.5% */
+    padding: 0 10px;
+    /* Khoảng cách giữa các khung hình */
+    box-sizing: border-box;
+}
+
+/* Định dạng từng chiếc hộp chứa logo */
+.partner-box {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    color: #475569;
     font-weight: 700;
-    color: #64748b;
-    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+/* Hiệu ứng hover nổi bật */
+.partner-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(50, 140, 193, 0.15);
+    border-color: #328cc1;
+    color: #328cc1;
+}
+
+/* --- TỰ ĐỘNG CÂN CHỈNH TRÊN ĐIỆN THOẠI (MOBILE) --- */
+@media (max-width: 768px) {
+    .partner-track {
+        width: 400%;
+        /* Trên mobile kéo dài ra để chỉ hiện 2 hình mỗi lần */
+    }
+
+    .partner-item {
+        width: 12.5%;
+        /* Giữ nguyên tỉ lệ để chia nhỏ số bước dịch chuyển */
+    }
 }
 
 .commitments {
@@ -969,4 +1008,131 @@ footer {
     /* Nút lún xuống lại khi bấm click */
 }
 
-/*khoa hello kitty*/
+/* --- BỐ CỤC ĐĂNG KÝ NÂNG CẤP (HIỆN ĐẠI & SANG TRỌNG) --- */
+.registration-layout {
+    display: flex;
+    align-items: stretch;
+    /* Ép 2 cột có chiều cao bằng nhau để cân xứng */
+    justify-content: space-between;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+/* CỘT TRÁI: HỘP ĐẾM NGƯỢC KIỂU KÍNH MỜ (GLASSMORPHISM) */
+.countdown-col {
+    flex: 4;
+    /* Chiếm 40% diện tích chiều ngang */
+    background: rgba(255, 255, 255, 0.06);
+    /* Nền trong suốt siêu nhẹ */
+    backdrop-filter: blur(12px);
+    /* Hiệu ứng làm mờ kính */
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    /* Viền kính mảnh */
+    padding: 40px 30px;
+    border-radius: 16px;
+    /* Bo góc hiện đại */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Căn giữa nội dung theo chiều dọc */
+    text-align: center;
+}
+
+/* CỘT PHẢI: FORM ĐĂNG KÝ */
+.form-col {
+    flex: 6;
+    /* Chiếm 60% diện tích chiều ngang */
+    width: 100%;
+}
+
+.form-col .form-box {
+    max-width: 100%;
+    /* Mở rộng form bằng với khung chứa 60% */
+    border-radius: 16px;
+    /* Đồng bộ bo góc với hộp kính bên trái */
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    padding: 40px;
+}
+
+/* TINH CHỈNH THÀNH PHẦN BÊN TRONG BỘ ĐẾM */
+.incentive-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+    line-height: 1.4;
+}
+
+/* Biến các ô số thành những khối vuông độc lập sắc nét */
+.contact .countdown-container {
+    gap: 12px;
+}
+
+/* --- ĐỔI MÀU SỐ ĐẾM NGƯỢC SANG TONE ẤM (TẠO CẢM GIÁC CẤP BÁCH) --- */
+
+/* Tinh chỉnh lại ô chứa số để ăn nhập với màu mới */
+.contact .countdown-box {
+    background: #031624;
+    /* Nền tối sâu hơn để làm nổi bật màu cam */
+    border: 1px solid rgba(255, 159, 0, 0.25);
+    /* Viền màu vàng cam siêu mảnh */
+    border-radius: 10px;
+    padding: 15px 10px;
+    min-width: 80px;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Biến con số thành màu Vàng Cam Hổ Phách kèm hiệu ứng phát sáng (Glow) */
+.contact .countdown-time {
+    color: #ff9f00;
+    /* Màu vàng cam rực rỡ, độ tương phản cực cao trên nền tối */
+    font-size: 2.2rem;
+    /* Tăng nhẹ kích thước số để dễ nhìn hơn */
+    font-weight: 800;
+    line-height: 1.2;
+
+    /* Hiệu ứng đổ bóng phát sáng (Glow effect) như đèn Neon */
+    text-shadow: 0 0 8px rgba(255, 159, 0, 0.6),
+        0 0 20px rgba(255, 159, 0, 0.3);
+}
+
+/* Nhãn chữ (Ngày, Giờ, Phút, Giây) bên dưới số */
+.countdown-label {
+    color: #cbd5e1;
+    /* Đổi sang màu chữ sáng hơn một chút để cân bằng với số cam */
+    font-size: 0.75rem;
+    margin-top: 5px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.countdown-note {
+    margin-top: 35px;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* --- ĐÁP ỨNG DI Đ ỘNG (MOBILE) --- */
+@media (max-width: 992px) {
+    .registration-layout {
+        flex-direction: column;
+        /* Rớt thành hàng dọc trên điện thoại */
+        gap: 30px;
+    }
+
+    .countdown-col {
+        padding: 30px 20px;
+    }
+
+    .form-col .form-box {
+        padding: 30px 20px;
+    }
+}

@@ -33,32 +33,44 @@ let targetDate = new Date();
 targetDate.setDate(targetDate.getDate() + 15); // Tự động lấy ngày hiện tại cộng thêm 15 ngày
 const targetTime = targetDate.getTime();
 
+// Tối ưu hiệu năng: Lấy sẵn các phần tử HTML ra ngoài để không phải tìm lại sau mỗi 1 giây
+const daysElement = document.getElementById("days");
+const hoursElement = document.getElementById("hours");
+const minutesElement = document.getElementById("minutes");
+const secondsElement = document.getElementById("seconds");
+
 function updateCountdown() {
     const now = new Date().getTime();
     const difference = targetTime - now;
 
-    // Nếu thời gian kết thúc, dừng đồng hồ
+    // Nếu thời gian kết thúc, dừng đồng hồ và reset về 00
     if (difference < 0) {
         clearInterval(countdownInterval);
+        if (daysElement) daysElement.innerText = "00";
+        if (hoursElement) hoursElement.innerText = "00";
+        if (minutesElement) minutesElement.innerText = "00";
+        if (secondsElement) secondsElement.innerText = "00";
         return;
     }
 
+    // Tính toán số Ngày, Giờ, Phút, Giây còn lại
     const d = Math.floor(difference / (1000 * 60 * 60 * 24));
     const h = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
     const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((difference % (1000 * 60 ?? 1000)) / 1000);
+    const s = Math.floor((difference % (1000 * 60)) / 1000); // Đã sửa lỗi toán học "?? 1000" của code cũ
 
-    // Gán dữ liệu số vào giao diện HTML nếu phần tử tồn tại
-    if (document.getElementById("days")) {
-        document.getElementById("days").innerText = d < 10 ? "0" + d : d;
-        document.getElementById("hours").innerText = h < 10 ? "0" + h : h;
-        document.getElementById("minutes").innerText = m < 10 ? "0" + m : m;
-        document.getElementById("seconds").innerText = s < 10 ? "0" + s : s;
+    // Gán dữ liệu số vào giao diện HTML nếu các phần tử tồn tại
+    if (daysElement && hoursElement && minutesElement && secondsElement) {
+        daysElement.innerText = d < 10 ? "0" + d : d;
+        hoursElement.innerText = h < 10 ? "0" + h : h;
+        minutesElement.innerText = m < 10 ? "0" + m : m;
+        secondsElement.innerText = s < 10 ? "0" + s : s;
     }
 }
+
 // Chạy chu kỳ cập nhật mỗi 1 giây
 const countdownInterval = setInterval(updateCountdown, 1000);
-updateCountdown();
+updateCountdown(); s
 
 // 4. XỬ LÝ ĐĂNG KÝ FORM (MỚI TOÀN DIỆN)
 const landingForm = document.getElementById("landingForm");
@@ -122,7 +134,7 @@ if (landingForm) {
         const b1Options = document.getElementsByName("b1Certificate");
         const b1Err = document.getElementById("b1Err");
         let b1Checked = false;
-        
+
         for (const option of b1Options) {
             if (option.checked) {
                 b1Checked = true;
@@ -149,12 +161,12 @@ if (landingForm) {
 function toggleFaq(element) {
     const faqItem = element.parentElement;
     const isActive = faqItem.classList.contains('active');
-    
+
     // Đóng tất cả các mục FAQ khác lại
     document.querySelectorAll('.faq-item').forEach(item => {
         item.classList.remove('active');
     });
-    
+
     // Nếu mục vừa ấn chưa mở thì mở nó ra
     if (!isActive) {
         faqItem.classList.add('active');
@@ -173,8 +185,8 @@ function handleScrollEffects() {
     reveals.forEach((reveal) => {
         const elementTop = reveal.getBoundingClientRect().top;
         if (elementTop < windowHeight - elementVisible) {
-            reveal.classList.add("reveal"); 
-            reveal.classList.add("active"); 
+            reveal.classList.add("reveal");
+            reveal.classList.add("active");
         }
     });
 
@@ -222,26 +234,24 @@ if (backToTopBtn) {
             behavior: "smooth" // Hiệu ứng cuộn mượt mà không bị khựng
         });
     });
-    if (backToTopBtn) 
-    {
-      backToTopBtn.addEventListener("click", (e) => 
-        {
-          e.preventDefault(); // Chặn hoàn toàn hành vi nhảy trang mặc định của trình duyệt
-        
-          window.scrollTo
-          ({
-            top: 0,
-            behavior: "smooth" // Ép cuộn từ từ
-          });
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener("click", (e) => {
+            e.preventDefault(); // Chặn hoàn toàn hành vi nhảy trang mặc định của trình duyệt
+
+            window.scrollTo
+                ({
+                    top: 0,
+                    behavior: "smooth" // Ép cuộn từ từ
+                });
         });
     }
 }
 // Danh sách tên ngẫu nhiên để tạo độ tin cậy
 const vips = [
-    "Chị Nguyễn Thị M. (Quảng Ngãi)", 
-    "Anh Lê Hoàng N. (BKC)", 
-    "Anh Phạm Minh T.", 
-    "Chị Trần Kim T.", 
+    "Chị Nguyễn Thị M. (Quảng Ngãi)",
+    "Anh Lê Hoàng N. (BKC)",
+    "Anh Phạm Minh T.",
+    "Chị Trần Kim T.",
     "Anh Vũ Hoàng L."
 ];
 
@@ -269,3 +279,29 @@ setInterval(showFakeNotification, 20000);
 
 // Kích hoạt lần đầu tiên sau khi load trang 5 giây
 setTimeout(showFakeNotification, 5000);
+// 7. CHỨC NĂNG CHẠY ĐỐI TÁC TỰ ĐỘNG (DỊCH CHUYỂN 4 HÌNH/LẦN)
+let partnerStage = 0;
+const partnerTrack = document.getElementById("partnerTrack");
+
+function autoSlidePartners() {
+    if (!partnerTrack) return;
+
+    // Kiểm tra xem đang ở màn hình PC hay Mobile
+    const isMobile = window.innerWidth <= 768;
+
+    if (!isMobile) {
+        // Trên PC: Có 2 trạng thái (0% và -50% của thanh ray)
+        partnerStage = partnerStage === 0 ? 1 : 0;
+        partnerTrack.style.transform = `translateX(-${partnerStage * 50}%)`;
+    } else {
+        // Trên Mobile: Hiện 2 hình/lần -> có 4 trạng thái (0%, -25%, -50%, -75%)
+        partnerStage++;
+        if (partnerStage >= 4) {
+            partnerStage = 0;
+        }
+        partnerTrack.style.transform = `translateX(-${partnerStage * 25}%)`;
+    }
+}
+
+// Tự động lướt sang nhóm tiếp theo sau mỗi 5 giây
+setInterval(autoSlidePartners, 5000);
