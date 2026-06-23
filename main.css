@@ -141,7 +141,7 @@ section {
 /* --- 4. SECTION: TRANG CHỦ (HERO) & COUNTDOWN --- */
 .hero {
     background: linear-gradient(rgba(11, 60, 93, 0.85), rgba(11, 60, 93, 0.85)),
-        url('đường-dẫn-ảnh-của-bạn.jpg') no-repeat center center/cover;
+        url('https://quocteviet.edu.vn/wp-content/uploads/2025/12/gioi-thieu-tap-doan-1536x401.jpg') no-repeat center center/cover;
     color: var(--white);
     text-align: center;
     padding: 120px 20px;
@@ -487,67 +487,94 @@ section {
         box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
     }
 }
+/* --- 11. KHỐI ĐỐI TÁC CHIẾN LƯỢC - CHẠY VÔ TẬN (INFINITE SCROLL) --- */
 
-/* --- 11. KHỐI ĐỐI TÁC, CAM KẾT, FAQS & ROADMAP MỚI --- */
-/* --- LÀM ĐẸP SLIDER ĐỐI TÁC (8 KHUNG) --- */
 .partner-slider {
     width: 100%;
     overflow: hidden;
-    /* Ẩn các hình chưa được kích hoạt */
-    padding: 10px 0;
+    padding: 15px 0;
+    display: flex;
 }
 
 .partner-track {
     display: flex;
-    width: 200%;
-    /* Khối chứa dài gấp đôi để chia làm 2 màn (mỗi màn chiếm 100%) */
-    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-    /* Hiệu ứng lướt cực mượt */
+    width: max-content;
+    gap: 0;
+    /* Kích hoạt animation chạy liên tục, mất 20 giây để đi hết 1 vòng */
+    animation: infiniteScroll 20s linear infinite; 
+    will-change: transform;
+}
+
+/* Khi người dùng di chuột vào logo, dải băng chuyền sẽ tạm dừng để họ dễ quan sát */
+.partner-slider:hover .partner-track {
+    animation-play-state: paused;
 }
 
 .partner-item {
-    width: 12.5%;
-    /* Vì thanh ray là 200%, nên 1 hình chiếm 1/8 thanh ray = 12.5% */
-    padding: 0 10px;
-    /* Khoảng cách giữa các khung hình */
+    /* Đảm bảo kích thước cố định để tính toán chu kỳ tịnh tiến chính xác */
+    width: 250px; 
+    padding: 0 15px;
     box-sizing: border-box;
+    flex-shrink: 0;
 }
 
-/* Định dạng từng chiếc hộp chứa logo */
 .partner-box {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    border-radius: 10px;
-    height: 80px;
+    border-radius: 12px;
+    height: 85px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
     color: #475569;
     font-weight: 700;
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-/* Hiệu ứng hover nổi bật */
 .partner-box:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 15px -3px rgba(50, 140, 193, 0.15);
-    border-color: #328cc1;
-    color: #328cc1;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px -5px rgba(0, 102, 204, 0.15);
+    border-color: #0066cc;
+    color: #0066cc;
+}
+
+/* KỊCH BẢN CHẠY LIÊN TỤC: Dịch chuyển chuẩn xác 50% (một nửa chiều dài thanh ray bao gồm 1 cụm logo) */
+@keyframes infiniteScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* --- TỰ ĐỘNG CÂN CHỈNH TRÊN ĐIỆN THOẠI (MOBILE) --- */
 @media (max-width: 768px) {
-    .partner-track {
-        width: 400%;
-        /* Trên mobile kéo dài ra để chỉ hiện 2 hình mỗi lần */
-    }
-
     .partner-item {
-        width: 12.5%;
-        /* Giữ nguyên tỉ lệ để chia nhỏ số bước dịch chuyển */
+        width: 160px; /* Thu nhỏ các hộp lại một chút trên điện thoại cho đẹp */
+        padding: 0 8px;
     }
+    .partner-box {
+        height: 70px;
+        font-size: 0.85rem;
+    }
+}
+/* Ép ảnh logo tự động thu nhỏ vừa vặn bên trong hộp chứa */
+.partner-box img {
+    max-width: 80%;       /* Không cho ảnh chạm sát viền hộp */
+    max-height: 70%;      /* Giới hạn chiều cao để ảnh cân đối */
+    object-fit: contain;  /* Giữ nguyên tỷ lệ gốc của logo, không bị méo hình */
+    filter: grayscale(100%); /* (Tùy chọn) Biến logo thành màu đen trắng cho sang trọng */
+    opacity: 0.7;         /* Làm mờ nhẹ */
+    transition: all 0.3s ease;
+}
+
+/* Khi hover vào hộp, logo sẽ sáng lên và hiện đầy đủ màu sắc gốc */
+.partner-box:hover img {
+    filter: grayscale(0%);
+    opacity: 1;
 }
 
 .commitments {
