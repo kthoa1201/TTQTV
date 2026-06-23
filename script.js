@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     // 1. CHỨC NĂNG TRƯỢT MƯỢT ĐẾN CÁC PHẦN (SMOOTH SCROLL)
     // ==========================================
-    window.scrollToSection = function(sectionId) {
+    window.scrollToSection = function (sectionId) {
         const section = document.getElementById(sectionId);
         if (section) {
             section.scrollIntoView({ behavior: "smooth" });
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalSlides = 3;
     const wrapper = document.getElementById("sliderWrapper");
 
-    window.moveSlide = function(direction) {
+    window.moveSlide = function (direction) {
         currentSlide += direction;
         if (currentSlide >= totalSlides) {
             currentSlide = 0;
@@ -171,7 +171,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
     // 5. XỬ LÝ ĐÓNG/MỞ KHỐI FAQS (ACCORDION)
     // ==========================================
-    window.toggleFaq = function(element) {
+    window.toggleFaq = function (element) {
         const faqItem = element.parentElement;
         const isActive = faqItem.classList.contains('active');
 
@@ -269,8 +269,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const partnerTrack = document.getElementById("partnerTrack");
 
 
-        // Cho chạy tự động sau mỗi 5 giây
-        setInterval(autoSlidePartners, 5000);
+    // Cho chạy tự động sau mỗi 5 giây
+    setInterval(autoSlidePartners, 5000);
 
 
 });
