@@ -12,18 +12,27 @@
 <body>
 
     <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">THẠC SĨ<span> QUỐC TẾ VIỆT</span></div>
-            <ul class="nav-menu">
-                <li><a onclick="scrollToSection('trang-chu')">Trang Chủ</a></li>
-                <li><a onclick="scrollToSection('gioi-thieu')">Giới Thiệu</a></li>
-                <li><a onclick="scrollToSection('nganh-dao-tao')">Ngành Đào Tạo</a></li>
-                <li><a onclick="scrollToSection('danh-gia')">Đánh Giá</a></li>
-                <li><a href="javascript:void(0);" onclick="scrollToSection('lien-he')" class="btn-register">Đăng Ký
-                        Ngay</a></li>
-            </ul>
-        </div>
-    </nav>
+    <div class="nav-container">
+        <!-- Giữ nguyên cấu trúc logo của bạn -->
+        <div class="logo">THẠC SĨ<span> QUỐC TẾ VIỆT</span></div>
+        
+        <!-- NÚT MENU HAMBURGER CHO ĐIỆN THOẠI (MỚI THÊM) -->
+        <button class="menu-toggle" id="menuToggle" aria-label="Mở Menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <!-- Giữ nguyên các mục menu của bạn -->
+        <ul class="nav-menu" id="navMenu">
+            <li><a onclick="scrollToSection('trang-chu')">Trang Chủ</a></li>
+            <li><a onclick="scrollToSection('gioi-thieu')">Giới Thiệu</a></li>
+            <li><a onclick="scrollToSection('nganh-dao-tao')">Ngành Đào Tạo</a></li>
+            <li><a onclick="scrollToSection('danh-gia')">Đánh Giá</a></li>
+            <li><a onclick="scrollToSection('lien-he')" class="btn-register">Đăng Ký Ngay</a></li>
+        </ul>
+    </div>
+</nav>
 
     <section id="trang-chu" class="hero">
     </section>
@@ -287,7 +296,6 @@
             <h2 class="section-title">Nhận Tư Vấn & Lịch Tuyển Sinh</h2>
 
             <div class="registration-layout">
-
                 <div class="countdown-col">
                     <div class="incentive-text">
                         <h3>Thời Gian Nhận Ưu Đãi Chỉ Còn:</h3>

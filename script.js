@@ -271,6 +271,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cho chạy tự động sau mỗi 5 giây
     setInterval(autoSlidePartners, 5000);
+//Menu ẩn cho điện thoại
+document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
 
+    if (menuToggle && navMenu) {
+        // Click vào nút 3 gạch thì đóng/mở menu
+        menuToggle.addEventListener("click", () => {
+            menuToggle.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Tự động ĐÓNG menu lại sau khi người dùng click chọn 1 mục để cuộn trang
+        const menuItems = navMenu.querySelectorAll("a");
+        menuItems.forEach(item => {
+            item.addEventListener("click", () => {
+                menuToggle.classList.remove("active");
+                navMenu.classList.remove("active");
+            });
+        });
+    }
+});
 
 });
