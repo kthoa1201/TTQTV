@@ -973,7 +973,7 @@ footer {
 /* --- CỘT TRÁI: HỘP ĐẾM NGƯỢC KIỂU KÍNH MỜ (GLASSMORPHISM) --- */
 .countdown-col {
     flex: 4; /* Chiếm 40% diện tích chiều ngang */
-    background: rgba(255, 255, 255, 0.06); /* Nền trong suốt siêu nhẹ */
+    background: var(--secondary-color); /* Nền trong suốt siêu nhẹ */
     backdrop-filter: blur(12px); /* Hiệu ứng làm mờ kính */
     -webkit-backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.12); /* Viền kính mảnh */
@@ -1047,7 +1047,7 @@ footer {
 .countdown-note {
     font-size: 0.9rem;
     font-style: italic;
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--white);
     line-height: 1.5;
     margin: 0;
 }
@@ -1302,7 +1302,7 @@ footer {
 .countdown-note {
     margin-top: 35px;
     font-size: 0.95rem;
-    color: var(--gray);
+    color: var(--white);
     line-height: 1.6;
     font-style: italic;
 }
