@@ -1,4 +1,4 @@
-/* --- 1. CSS RESET & VARIABLES (ĐÃ ĐỔI SANG TONE XANH BIỂN) --- */
+/* --- 1. CSS RESET & VARIABLES (ĐÃ CẬP NHẬT TÔNG NỀN XANH NHẠT MÁT) --- */
 * {
     margin: 0;
     padding: 0;
@@ -7,15 +7,27 @@
 }
 
 :root {
-    --primary-color: #0b3c5d;
-    /* Xanh biển đậm (Deep Ocean) - Dành cho thanh menu, tiêu đề, nền khối lớn */
-    --secondary-color: #328cc1;
-    /* Xanh biển sáng (Ocean Blue) - Dành cho nút bấm, điểm nhấn, đếm ngược, icon */
-    --text-color: #1d2731;
-    /* Xám xanh đậm - Dành cho chữ để đọc dễ chịu, không bị đen kịt */
-    --bg-light: #f4f7f6;
-    /* Xám trắng mát - Dành cho nền của các section xen kẽ */
+    /* 🌟 MÀU CHỦ ĐẠO (GỐC CỦA BẠN): Xanh bầu trời sáng, dùng làm nền khối lớn hoặc các vệt nhấn */
+    --primary-color: #7dd3fc;
+
+    /* 🎨 MÀU ĐIỂM NHẤN (MỚI): Đổi sang Xanh Đại Dương Đậm để làm nổi bật nút bấm (Button), 
+       Icon quan trọng, và các tiêu đề chính (Heading) trên nền xanh nhạt. */
+    --secondary-color: #0369a1;
+
+    /* ✨ MÀU HOVER NÚT (MỚI): Màu xanh sẫm hơn một chút khi người dùng rà chuột vào nút bấm */
+    --hover-color: #0c4a6e;
+
+    /* 📝 MÀU CHỮ CHÍNH (MỚI): Đổi sang Xám Xanh Sẫm giúp văn bản cực kỳ sắc nét, dễ đọc, 
+       không bị mờ mắt khi hiển thị trên nền sáng */
+    --text-color: #0f172a;
+
+    /* 🗂️ MÀU NỀN XEN KẼ (MỚI): Xanh Slate cực nhạt, dùng cho các section xen kẽ (như FAQs, Đối tác) 
+       để tạo sự phân tầng rõ ràng cho trang web */
+    --bg-light: #f0f9ff;
+
+    /* ⚪ MÀU TRẮNG: Dành cho nền của Form đăng ký, nền các hộp nhỏ để chúng nổi bật lên hẳn */
     --white: #ffffff;
+
     --nav-height: 70px;
 }
 
