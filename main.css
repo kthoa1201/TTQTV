@@ -1162,3 +1162,35 @@ footer {
         padding: 30px 20px;
     }
 }
+
+.btn-register {
+    background-color: #7dd3fc;
+    /* Màu nền xanh đậm giống chữ THẠC SĨ */
+    color: #ffffff !important;
+    /* Màu chữ trắng */
+    padding: 8px 18px;
+    /* Khoảng cách đệm tạo độ rộng cho nút */
+    border-radius: 4px;
+    /* Bo góc nhẹ cho nút */
+    text-decoration: none;
+    /* Bỏ gạch chân nếu có */
+    font-weight: bold;
+    /* Làm đậm chữ */
+    transition: background-color 0.3s ease;
+    /* Hiệu ứng mượt khi rê chuột */
+}
+
+/* Hiệu ứng đổi màu khi người dùng rê chuột (hover) vào nút */
+.btn-register:hover {
+    background-color: #ff9f00;
+    /* Màu tối hơn một chút khi hover */
+    color: #ffffff !important;
+}
+
+.countdown-note {
+    margin-top: 35px;
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.6;
+    font-style: italic;
+}
