@@ -215,6 +215,7 @@
 
         </div>
     </section>
+
     <section class="incentives" style="background-color: var(--white); padding: 50px 0;">
         <div class="container">
             <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Tài Nguyên Miễn Phí Dành Cho Bạn
@@ -225,13 +226,19 @@
 
                 <div class="incentive-video" style="flex: 1; min-width: 350px;">
                     <div class="video-wrapper"
-                        style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-                        <iframe src="https://www.youtube.com/embed/KelpjDfiuB4"
-                            title="Giới thiệu Chương trình - Quốc tế Việt"
-                            style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowfullscreen>
-                        </iframe>
+                        style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background: #000;">
+
+                        <a href="https://youtu.be/KelpjDfiuB4" target="_blank"
+                            style="display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
+                            <img src="https://i.ytimg.com/vi/KelpjDfiuB4/maxresdefault.jpg" alt="Học cao học"
+                                style="width: 100%; height: 100%; object-fit: cover; border: none;">
+
+                            <div
+                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(224, 34, 34, 0.9); width: 68px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; transition: background 0.2s;">
+                                ▶
+                            </div>
+                        </a>
+
                     </div>
                 </div>
 
@@ -249,13 +256,15 @@
                         <li style="margin-bottom: 12px; font-size: 15px; color: #444;">⭐ Bí quyết bảo vệ luận văn đạt
                             điểm tuyệt đối</li>
                     </ul>
-                    <button class="btn" onclick="scrollToSection('lien-he')" style="cursor: pointer;">ĐĂNG KÝ NHẬN TÀI
-                        LIỆU</button>
+                    <button class="btn" onclick="scrollToSection('lien-he')"
+                        style="cursor: pointer; background-color: #0060a9; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; font-weight: bold;">ĐĂNG
+                        KÝ NHẬN TÀI LIỆU</button>
                 </div>
 
             </div>
         </div>
     </section>
+
     <section class="counters">
         <div class="container grid-3">
             <div class="counter-item">
