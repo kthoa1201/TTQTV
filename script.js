@@ -271,27 +271,54 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Cho chạy tự động sau mỗi 5 giây
     setInterval(autoSlidePartners, 5000);
-//Menu ẩn cho điện thoại
-document.addEventListener("DOMContentLoaded", () => {
-    const menuToggle = document.getElementById("menuToggle");
-    const navMenu = document.getElementById("navMenu");
+    //Menu ẩn cho điện thoại
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuToggle = document.getElementById("menuToggle");
+        const navMenu = document.getElementById("navMenu");
 
-    if (menuToggle && navMenu) {
-        // Click vào nút 3 gạch thì đóng/mở menu
-        menuToggle.addEventListener("click", () => {
-            menuToggle.classList.toggle("active");
-            navMenu.classList.toggle("active");
-        });
-
-        // Tự động ĐÓNG menu lại sau khi người dùng click chọn 1 mục để cuộn trang
-        const menuItems = navMenu.querySelectorAll("a");
-        menuItems.forEach(item => {
-            item.addEventListener("click", () => {
-                menuToggle.classList.remove("active");
-                navMenu.classList.remove("active");
+        if (menuToggle && navMenu) {
+            // Click vào nút 3 gạch thì đóng/mở menu
+            menuToggle.addEventListener("click", () => {
+                menuToggle.classList.toggle("active");
+                navMenu.classList.toggle("active");
             });
-        });
+
+            // Tự động ĐÓNG menu lại sau khi người dùng click chọn 1 mục để cuộn trang
+            const menuItems = navMenu.querySelectorAll("a");
+            menuItems.forEach(item => {
+                item.addEventListener("click", () => {
+                    menuToggle.classList.remove("active");
+                    navMenu.classList.remove("active");
+                });
+            });
+        }
+    });
+
+    function openVideoPopup() {
+        var modal = document.getElementById("videoModal");
+        var iframe = document.getElementById("popupIframe");
+
+        // Gán link kèm tham số autoplay để bấm cái là chạy luôn
+        iframe.src = "https://www.youtube.com/embed/KelpjDfiuB4?autoplay=1";
+        modal.style.display = "flex";
     }
-});
+
+    function closeVideoPopup() {
+        var modal = document.getElementById("videoModal");
+        var iframe = document.getElementById("popupIframe");
+
+        // Xóa src để tắt video hoàn toàn khi đóng popup
+        iframe.src = "";
+        modal.style.display = "none";
+    }
+
+    // Đóng popup nếu người dùng click ra ngoài vùng video tối
+    window.onclick = function (event) {
+        var modal = document.getElementById("videoModal");
+        if (event.target == modal) {
+            closeVideoPopup();
+        }
+    }
+
 
 });
