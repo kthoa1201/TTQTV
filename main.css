@@ -6,27 +6,32 @@
 }
 
 :root {
-    --primary-color: #7dd3fc;       /* Xanh nhạt bầu trời */
-    --secondary-color: #0369a1;     /* Xanh đậm đại dương (Dùng làm màu chính cho chữ/nút cần nổi bật) */
-    --hover-color: #0c4a6e;         
+    --primary-color: #7dd3fc;
+    /* Xanh nhạt bầu trời */
+    --secondary-color: #0369a1;
+    /* Xanh đậm đại dương (Dùng làm màu chính cho chữ/nút cần nổi bật) */
+    --hover-color: #0c4a6e;
     /* Hệ thống màu chữ & Nền */
-    --text-color: #0f172a;          /* Xám đen Slate cao cấp */
+    --text-color: #0f172a;
+    /* Xám đen Slate cao cấp */
     --text-color-light: #ffffff;
-    --bg-light: #f0f9ff;            /* Nền xanh băng siêu nhạt dịu mắt */
+    --bg-light: #f0f9ff;
+    /* Nền xanh băng siêu nhạt dịu mắt */
     --white: #ffffff;
     --gray: #64748b;
     --black: #000000;
-    
+
     /* Kích thước */
     --nav-height: 70px;
-    --btn-color: #0369a1; 
-    --btn-hover-color: #ff9f00;  
+    --btn-color: #0369a1;
+    --btn-hover-color: #ff9f00;
     --border-color: #e2e8f0;
     --error-color: #ef4444;
 }
 
 html {
-    scroll-behavior: smooth; /* Cuộn mượt */
+    scroll-behavior: smooth;
+    /* Cuộn mượt */
 }
 
 body {
@@ -62,7 +67,7 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; 
+    position: relative;
 }
 
 .logo {
@@ -70,7 +75,7 @@ a {
     font-weight: 800;
     color: var(--primary-color);
     letter-spacing: 0.5px;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
 
 .logo span {
@@ -96,6 +101,7 @@ a {
 .nav-menu a:hover {
     color: var(--secondary-color);
 }
+
 /* --- 2. GLOBAL LAYOUTS & COMPONENTS --- */
 section {
     padding: 80px 0;
@@ -120,7 +126,7 @@ section {
 
 .btn {
     display: inline-block;
-    background-color: var(--secondary-color) !important; 
+    background-color: var(--secondary-color) !important;
     color: var(--white);
     padding: 12px 35px;
     border-radius: 5px;
@@ -128,11 +134,11 @@ section {
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: none;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(3, 105, 161, 0.15); 
+    box-shadow: 0 4px 6px rgba(3, 105, 161, 0.15);
 }
 
 .btn:hover {
-    background-color: var(--btn-hover-color); 
+    background-color: var(--btn-hover-color);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(3, 105, 161, 0.25);
 }
@@ -142,37 +148,46 @@ section {
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
 }
+
 /* --- 3. SECTION: TRANG CHỦ (HERO) - CHỈ HIỂN THỊ ẢNH NỀN --- */
 .hero {
-    background-color: var(--primary-color); 
+    background-color: var(--primary-color);
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-    
+
     width: 100%;
     height: 520px;
     padding: 0;
-    transition: background-image 1s ease-in-out; 
-    animation: heroBgSlider 15s infinite ease-in-out; 
+    transition: background-image 1s ease-in-out;
+    animation: heroBgSlider 15s infinite ease-in-out;
 }
 
 /* KỊCH BẢN TỰ ĐỘNG NHẢY 3 ẢNH NỀN TRẦN (Đã làm mượt các điểm mốc giao nhau) */
 @keyframes heroBgSlider {
-    0%, 28% {
+
+    0%,
+    28% {
         background-image: url('https://thacsi.quocteviet.edu.vn/wp-content/uploads/2026/03/Tam-ly-hoc-scaled.png');
     }
+
     /* Khoảng đệm từ 28% -> 33% giúp ảnh chuyển màu mượt thay vì giật bộp */
-    33%, 61% {
+    33%,
+    61% {
         background-image: url('https://thacsi.quocteviet.edu.vn/wp-content/uploads/2026/04/post-scaled.png');
     }
+
     /* Khoảng đệm từ 61% -> 66% */
-    66%, 95% {
+    66%,
+    95% {
         background-image: url('https://thacsi.quocteviet.edu.vn/wp-content/uploads/2026/04/baner-Van-bang-2-scaled.png');
     }
+
     100% {
         background-image: url('https://thacsi.quocteviet.edu.vn/wp-content/uploads/2026/03/Tam-ly-hoc-scaled.png');
     }
 }
+
 /* --- 4. SECTION: GIỚI THIỆU & SLIDER BAR (CAROUSEL) --- */
 .about {
     background-color: var(--bg-light);
@@ -204,18 +219,20 @@ section {
     overflow: hidden;
     border-radius: 8px;
     /* ✨ SỬA: Thay đổi bóng đổ màu đen sẫm cũ sang bóng đổ màu xanh Slate mịn màng, hợp nền */
-    box-shadow: 0 10px 25px rgba(3, 105, 161, 0.12); 
+    box-shadow: 0 10px 25px rgba(3, 105, 161, 0.12);
 }
 
 .slider-wrapper {
     display: flex;
-    width: 300%; /* Đảm bảo chứa đủ 3 slide dàn hàng ngang */
+    width: 300%;
+    /* Đảm bảo chứa đủ 3 slide dàn hàng ngang */
     height: 100%;
     transition: transform 0.6s cubic-bezier(0.42, 0, 0.58, 1);
 }
 
 .slide {
-    width: 33.333%; /* 100% chia cho 3 slide */
+    width: 33.333%;
+    /* 100% chia cho 3 slide */
     flex-shrink: 0;
     height: 100%;
     background-size: cover;
@@ -227,7 +244,7 @@ section {
     top: 50%;
     transform: translateY(-50%);
     /* ✨ SỬA: Chuyển màu nút sang tone xanh đen mờ để thống nhất hệ màu */
-    background: rgba(15, 23, 42, 0.4); 
+    background: rgba(15, 23, 42, 0.4);
     color: var(--white);
     border: none;
     padding: 14px 18px;
@@ -237,13 +254,15 @@ section {
     border-radius: 5px;
     user-select: none;
     transition: background 0.3s ease;
-    z-index: 10; /* Đảm bảo luôn nổi lên trên các bức ảnh */
+    z-index: 10;
+    /* Đảm bảo luôn nổi lên trên các bức ảnh */
 }
 
 /* CHỈ ÁP DỤNG HOVER TRÊN PC (Tránh lỗi dính màu nút trên màn hình cảm ứng điện thoại) */
 @media (min-width: 769px) {
     .slide-btn:hover {
-        background: rgba(3, 105, 161, 0.85); /* Đổi sang màu xanh hệ thống khi hover */
+        background: rgba(3, 105, 161, 0.85);
+        /* Đổi sang màu xanh hệ thống khi hover */
     }
 }
 
@@ -254,6 +273,7 @@ section {
 .next {
     right: 15px;
 }
+
 /* --- 6. KHỐI SỐ LIỆU THỐNG KÊ (COUNTERS) --- */
 .counters {
     background-color: var(--primary-color);
@@ -264,14 +284,14 @@ section {
 
 .counter-item h3 {
     font-size: 2.8rem;
-    color: #ffffff; 
+    color: #ffffff;
     margin-bottom: 5px;
     font-weight: 800;
 }
 
 .counter-item p {
     font-size: 0.95rem;
-    color: #e0f2fe; 
+    color: #e0f2fe;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -290,7 +310,7 @@ section {
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 30px rgba(3, 105, 161, 0.12); 
+    box-shadow: 0 20px 30px rgba(3, 105, 161, 0.12);
     border-top-color: var(--secondary-color);
 }
 
@@ -306,6 +326,7 @@ section {
     margin-bottom: 15px;
     font-weight: 700;
 }
+
 /* --- 8. SECTION: ĐÁNH GIÁ (TESTIMONIALS) --- */
 .reviews {
     background-color: var(--bg-light);
@@ -315,7 +336,7 @@ section {
     background: var(--white);
     padding: 30px;
     border-radius: 8px;
-    box-shadow: 0 10px 25px rgba(3, 105, 161, 0.04); 
+    box-shadow: 0 10px 25px rgba(3, 105, 161, 0.04);
 }
 
 .review-text {
@@ -333,14 +354,15 @@ section {
 .reviewer-avatar {
     width: 50px;
     height: 50px;
-    background-color: #e0f2fe; 
+    background-color: #e0f2fe;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: bold;
     color: var(--primary-color);
-    border: 2px solid rgba(3, 105, 161, 0.1); }
+    border: 2px solid rgba(3, 105, 161, 0.1);
+}
 
 .reviewer-name h4 {
     color: var(--primary-color);
@@ -370,7 +392,7 @@ section {
     padding: 40px;
     border-radius: 8px;
     color: var(--text-color);
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15); 
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.15);
 }
 
 .form-group {
@@ -396,7 +418,7 @@ section {
 .form-control:focus {
     outline: none;
     border-color: var(--secondary-color);
-    box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.15); 
+    box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.15);
 }
 
 .error-msg {
@@ -420,7 +442,8 @@ section {
 .float-phone img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Giữ nguyên tỷ lệ ảnh không bị móp méo */
+    object-fit: cover;
+    /* Giữ nguyên tỷ lệ ảnh không bị móp méo */
     display: block;
 }
 
@@ -433,17 +456,19 @@ section {
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    margin-bottom: 15px; /* Khoảng cách giữa các nút */
+    margin-bottom: 15px;
+    /* Khoảng cách giữa các nút */
     cursor: pointer;
-    
+
     /* ✨ SỬA: Đưa hiệu ứng scale mượt mà vào một thuộc tính transition tổng thể */
-    transition: all 0.3s ease-in-out; 
+    transition: all 0.3s ease-in-out;
 }
 
 /* ✨ SỬA: Khi hover, ta tạm dừng hiệu ứng pulse và phóng to nhẹ để không bị giật khung hình */
 .float-btn:hover {
     transform: scale(1.12) !important;
-    animation-play-state: paused; /* Tạm dừng nhấp nháy khi đang rê chuột */
+    animation-play-state: paused;
+    /* Tạm dừng nhấp nháy khi đang rê chuột */
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3);
 }
 
@@ -474,10 +499,12 @@ section {
         transform: scale(1);
         box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
     }
+
     70% {
         transform: scale(1.04);
         box-shadow: 0 0 0 12px rgba(34, 197, 94, 0);
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
@@ -488,17 +515,21 @@ section {
 @keyframes pulseZalo {
     0% {
         transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.6); /* Tone màu xanh đậm Zalo */
+        box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.6);
+        /* Tone màu xanh đậm Zalo */
     }
+
     70% {
         transform: scale(1.04);
         box-shadow: 0 0 0 12px rgba(2, 132, 199, 0);
     }
+
     100% {
         transform: scale(1);
         box-shadow: 0 0 0 0 rgba(2, 132, 199, 0);
     }
 }
+
 /* --- 14. KHỐI ĐỐI TÁC CHIẾN LƯỢC - CHẠY VÔ TẬN (INFINITE SCROLL) --- */
 
 .partner-slider {
@@ -506,7 +537,8 @@ section {
     overflow: hidden;
     padding: 20px 0;
     display: flex;
-    position: relative; /* ✨ MỚI: Làm điểm tựa để tạo lớp phủ mờ 2 bên cạnh */
+    position: relative;
+    /* ✨ MỚI: Làm điểm tựa để tạo lớp phủ mờ 2 bên cạnh */
 }
 
 /* ✨ MẸO NÂNG CAO: Tạo hiệu ứng dải băng chuyền mờ dần ở 2 mép màn hình (nhìn rất cao cấp) */
@@ -517,14 +549,19 @@ section {
     width: 150px;
     position: absolute;
     z-index: 2;
-    pointer-events: none; /* Để người dùng vẫn có thể di chuột xuyên qua lớp mờ */
+    pointer-events: none;
+    /* Để người dùng vẫn có thể di chuột xuyên qua lớp mờ */
 }
+
 .partner-slider::before {
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     background: linear-gradient(to right, var(--bg-light) 0%, rgba(255, 255, 255, 0) 100%);
 }
+
 .partner-slider::after {
-    top: 0; right: 0;
+    top: 0;
+    right: 0;
     background: linear-gradient(to left, var(--bg-light) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
@@ -532,7 +569,8 @@ section {
     display: flex;
     width: max-content;
     gap: 0;
-    animation: infiniteScroll 25s linear infinite; /* ✨ Tăng lên 25s để logo chạy chậm rãi, dễ nhìn hơn */
+    animation: infiniteScroll 25s linear infinite;
+    /* ✨ Tăng lên 25s để logo chạy chậm rãi, dễ nhìn hơn */
     will-change: transform;
 }
 
@@ -552,7 +590,7 @@ section {
 .partner-box {
     background: var(--white);
     /* ✨ SỬA: Thay --border-color bằng một màu xám xanh mảnh cố định nếu chưa định nghĩa biến */
-    border: 1px solid rgba(15, 23, 42, 0.08); 
+    border: 1px solid rgba(15, 23, 42, 0.08);
     border-radius: 12px;
     height: 85px;
     display: flex;
@@ -562,13 +600,14 @@ section {
     color: var(--text-color);
     font-weight: 700;
     cursor: pointer;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Đổi sang bezier cho mượt */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Đổi sang bezier cho mượt */
 }
 
 .partner-box:hover {
     transform: translateY(-4px);
     /* ✨ SỬA: Đổi bóng đổ màu xanh cũ sang màu xanh đại dương sậm của hệ thống mới */
-    box-shadow: 0 12px 20px -5px rgba(3, 105, 161, 0.15); 
+    box-shadow: 0 12px 20px -5px rgba(3, 105, 161, 0.15);
     border-color: var(--primary-color);
     color: var(--primary-color);
 }
@@ -577,8 +616,10 @@ section {
     0% {
         transform: translateX(0);
     }
+
     100% {
-        transform: translateX(-50%); /* Tịnh tiến chính xác một nửa dải băng sao chép */
+        transform: translateX(-50%);
+        /* Tịnh tiến chính xác một nửa dải băng sao chép */
     }
 }
 
@@ -627,59 +668,70 @@ section {
     background-color: var(--white);
 }
 
-.faq-wrapper {
-    max-width: 800px;
+/* Container chính */
+.faq-tree-container {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 1fr 4px 1fr;
+    /* Cột trái - Đường kẻ - Cột phải */
+    align-items: start;
+}
+
+/* Đường kẻ dọc chính giữa */
+.center-line {
+    width: 2px;
+    height: 100%;
+    background: var(--primary-color);
+    /* Xanh nước biển nhạt */
     margin: 0 auto;
 }
 
-.faq-item {
-    border-bottom: 1px solid var(--border-color);
-    padding: 15px 0;
+/* Các dòng câu hỏi */
+.faq-side {
+    display: flex;
+    flex-direction: column;
 }
 
-.faq-question {
+/* Loại bỏ dấu chấm đầu dòng và thiết kế lại mũi tên cuối câu */
+.faq-link-line {
+    padding: 20px 30px;
+    text-decoration: none;
+    color: #1e293b;
+    font-weight: 500;
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
     display: flex;
     justify-content: space-between;
+    /* Đẩy nội dung sang trái, mũi tên sang phải */
     align-items: center;
-    cursor: pointer;
-    padding: 10px 0;
 }
 
-.faq-question h3 {
-    font-size: 1.1rem;
-   color: var(--text-color);
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-/* Hiệu ứng đổi màu câu hỏi khi di chuột vào giúp giao diện sinh động hơn */
-.faq-question:hover h3 {
-    color: var(--secondary-color);
-}
-
-.faq-toggle {
+/* Thêm mũi tên ở cuối mỗi câu hỏi */
+.faq-link-line::after {
+    content: "→";
+    /* Mũi tên */
+    color: #838f9d;
+    /* Màu xám nhạt khi chưa hover */
     font-size: 1.2rem;
-    transition: transform 0.3s ease;
-    color: var(--secondary-color);
+    transition: all 0.3s ease;
 }
 
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.3s cubic-bezier(0, 1, 0, 1); /* Tối ưu hiệu ứng mở mượt hơn */
-    color: var(--gray); /* Chuyển màu chữ câu trả lời sang màu xám nhẹ sang trọng */
-    font-size: 0.95rem;
-    padding-right: 20px;
+/* Hiệu ứng khi di chuột vào */
+.faq-link-line:hover {
+    color: #0056b3;
+    /* Màu xanh nước biển trường */
+    background-color: #f8fafc;
+    padding-left: 35px;
+    /* Đẩy nhẹ nội dung sang phải */
 }
 
-.faq-item.active .faq-answer {
-    max-height: 500px; 
-    margin-top: 10px;
-    padding-bottom: 10px;
-}
-
-.faq-item.active .faq-toggle {
-    transform: rotate(45deg); /* Xoay dấu cộng thành dấu x hoặc mũi tên ngược */
+.faq-link-line:hover::after {
+    color: #0056b3;
+    /* Mũi tên đổi màu xanh khi hover */
+    transform: translateX(5px);
+    /* Mũi tên nhích nhẹ sang phải */
 }
 
 /* --- 17. SECTION: LỘ TRÌNH ĐÀO TẠO (ROADMAP) --- */
@@ -694,8 +746,8 @@ section {
 .step-number {
     font-size: 3rem;
     font-weight: 900;
-    color: rgba(255, 159, 0, 0.18); 
-    
+    color: rgba(255, 159, 0, 0.18);
+
     position: absolute;
     top: 10px;
     right: 20px;
@@ -730,7 +782,7 @@ footer {
     text-align: center;
     padding: 30px 20px;
     font-size: 0.9rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.05); 
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 
@@ -739,7 +791,7 @@ footer {
     width: 100%;
     height: 250px;
     background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)),
-                url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600') no-repeat center center/cover;
+        url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=600') no-repeat center center/cover;
     border-radius: 8px;
     display: flex;
     flex-direction: column;
@@ -762,7 +814,8 @@ footer {
     font-size: 3rem;
     color: var(--secondary-color);
     margin-bottom: 10px;
-    animation: pulse 2s infinite; /* Thừa hưởng hiệu ứng nhịp đập pulse mượt mà */
+    animation: pulse 2s infinite;
+    /* Thừa hưởng hiệu ứng nhịp đập pulse mượt mà */
 }
 
 /* --- 18. CÁC THÀNH PHẦN PHỤ (DURATIONS & INCENTIVES) --- */
@@ -785,7 +838,7 @@ footer {
 
 /* --- 19. NÚT QUAY LẠI ĐẦU TRANG (BACK TO TOP) --- */
 #backToTop {
-    position: relative; 
+    position: relative;
 
     /* Đồng bộ kích thước chuẩn 55px bằng các nút tiện ích khác */
     width: 55px;
@@ -822,7 +875,8 @@ footer {
 .toast {
     position: fixed;
     bottom: 30px;
-    left: -350px; /* Mặc định giấu bên trái ngoài màn hình */
+    left: -350px;
+    /* Mặc định giấu bên trái ngoài màn hình */
     background-color: var(--white);
     color: var(--text-color);
     padding: 15px 20px;
@@ -832,19 +886,22 @@ footer {
     align-items: center;
     gap: 12px;
     border-left: 5px solid var(--primary-color);
-    
-    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Hiệu ứng trượt đàn hồi siêu mượt */
-    z-index: 99999; /* Đảm bảo luôn đè lên trên mọi thành phần khác */
+
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    /* Hiệu ứng trượt đàn hồi siêu mượt */
+    z-index: 99999;
+    /* Đảm bảo luôn đè lên trên mọi thành phần khác */
     width: 320px;
 }
 
 .toast.show {
-    left: 30px; /* Trượt vào góc trái màn hình */
+    left: 30px;
+    /* Trượt vào góc trái màn hình */
 }
 
 .toast-icon {
     font-size: 1.5rem;
-    color: var(--btn-hover-color); 
+    color: var(--btn-hover-color);
 }
 
 .toast-body p {
@@ -867,7 +924,8 @@ footer {
 /* --- BỐ CỤC ĐĂNG KÝ NÂNG CẤP (HIỆN ĐẠI & SANG TRỌNG) --- */
 .registration-layout {
     display: flex;
-    align-items: stretch; /* Ép 2 cột có chiều cao bằng nhau để cân xứng */
+    align-items: stretch;
+    /* Ép 2 cột có chiều cao bằng nhau để cân xứng */
     justify-content: space-between;
     gap: 40px;
     margin-top: 20px;
@@ -886,7 +944,8 @@ footer {
 }
 
 .form-group .required {
-    color: var(--error-color); /* Dấu sao đỏ báo bắt buộc điền */
+    color: var(--error-color);
+    /* Dấu sao đỏ báo bắt buộc điền */
 }
 
 /* Gộp chung để tối ưu hóa hiển thị cho tất cả ô nhập liệu */
@@ -897,7 +956,8 @@ footer {
     width: 100%;
     padding: 12px;
     border: 1px solid var(--border-color);
-    border-radius: 6px; /* Bo góc thống nhất hệ thống form mới */
+    border-radius: 6px;
+    /* Bo góc thống nhất hệ thống form mới */
     font-size: 1rem;
     outline: none;
     color: var(--text-color);
@@ -909,7 +969,8 @@ footer {
 .form-group input:focus,
 .form-group select:focus {
     border-color: var(--secondary-color);
-    box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1); /* Hào quang xanh dịu nhẹ */
+    box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
+    /* Hào quang xanh dịu nhẹ */
 }
 
 /* Khu vực chọn nút tròn Radio */
@@ -924,12 +985,13 @@ footer {
     align-items: center;
     cursor: pointer;
     font-weight: normal !important;
-    user-select: none; /* Ngăn người dùng vô tình bôi đen chữ khi click nhanh */
+    user-select: none;
+    /* Ngăn người dùng vô tình bôi đen chữ khi click nhanh */
 }
 
 /* Tạo khoảng cách an toàn cho ô input radio */
 .radio-label input[type="radio"] {
-    margin-right: 8px; 
+    margin-right: 8px;
     cursor: pointer;
 }
 
@@ -938,21 +1000,25 @@ footer {
     color: var(--error-color);
     font-size: 0.85rem;
     margin-top: 5px;
-    display: none; /* Mặc định ẩn, chỉ hiện khi JS kích hoạt class .show hoặc style.display */
+    display: none;
+    /* Mặc định ẩn, chỉ hiện khi JS kích hoạt class .show hoặc style.display */
 }
 
 /* ĐỊNH DẠNG NÚT ĐĂNG KÝ TƯ VẤN - ĐỒNG BỘ MÀU CHỦ ĐẠO MẶC ĐỊNH */
 .submit-btn {
     width: 100%;
-    background-color: var(--btn-color); /* Ăn theo màu xanh đậm đại dương mặc định */
-    color: var(--white); /* Chữ trắng cực kỳ rõ nét */
+    background-color: var(--btn-color);
+    /* Ăn theo màu xanh đậm đại dương mặc định */
+    color: var(--white);
+    /* Chữ trắng cực kỳ rõ nét */
     padding: 14px;
     font-size: 1.1rem;
     font-weight: bold;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    box-shadow: 0 4px 10px rgba(3, 105, 161, 0.15); /* Bóng đổ theo tone xanh sẫm */
+    box-shadow: 0 4px 10px rgba(3, 105, 161, 0.15);
+    /* Bóng đổ theo tone xanh sẫm */
     transition: all 0.3s cubic-bezier(0.165, 0.84, 0.44, 1);
     margin-top: 15px;
     display: block;
@@ -960,71 +1026,90 @@ footer {
 
 /* Hiệu ứng khi di chuột vào nút (Kích hoạt màu Vàng Cam hối thúc) */
 .submit-btn:hover {
-    background-color: var(--btn-hover-color); /* Chuyển sang màu vàng cam rực rỡ */
+    background-color: var(--btn-hover-color);
+    /* Chuyển sang màu vàng cam rực rỡ */
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(255, 159, 0, 0.35); /* ✨ SỬA: Đổi bóng đổ sang tone cam ấm phát sáng đồng bộ */
+    box-shadow: 0 8px 20px rgba(255, 159, 0, 0.35);
+    /* ✨ SỬA: Đổi bóng đổ sang tone cam ấm phát sáng đồng bộ */
 }
 
 /* Hiệu ứng khi ấn giữ nút (Active) */
 .submit-btn:active {
-    transform: translateY(0); /* Nút lún xuống lại tạo cảm giác chân thực khi click */
+    transform: translateY(0);
+    /* Nút lún xuống lại tạo cảm giác chân thực khi click */
 }
 
 /* --- CỘT TRÁI: HỘP ĐẾM NGƯỢC KIỂU KÍNH MỜ (GLASSMORPHISM) --- */
 .countdown-col {
-    flex: 4; /* Chiếm 40% diện tích chiều ngang */
-    background: var(--secondary-color); /* Nền trong suốt siêu nhẹ */
-    backdrop-filter: blur(12px); /* Hiệu ứng làm mờ kính */
+    flex: 4;
+    /* Chiếm 40% diện tích chiều ngang */
+    background: var(--secondary-color);
+    /* Nền trong suốt siêu nhẹ */
+    backdrop-filter: blur(12px);
+    /* Hiệu ứng làm mờ kính */
     -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.12); /* Viền kính mảnh */
-    padding: 40px 25px; /* Giảm nhẹ padding hai bên để có thêm không gian cho hàng ngang */
-    border-radius: 16px; /* Bo góc hiện đại */
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12); /* Sửa bóng đổ sang màu xám tối nhẹ */
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    /* Viền kính mảnh */
+    padding: 40px 25px;
+    /* Giảm nhẹ padding hai bên để có thêm không gian cho hàng ngang */
+    border-radius: 16px;
+    /* Bo góc hiện đại */
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.12);
+    /* Sửa bóng đổ sang màu xám tối nhẹ */
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Căn giữa nội dung theo chiều dọc */
+    justify-content: center;
+    /* Căn giữa nội dung theo chiều dọc */
     text-align: center;
 }
 
 /* ✨ MỚI: KHUNG CHỨA BỘ ĐẾM NGANG ĐỒNG BỘ VỚI HTML CỦA BẠN */
 .countdown-container {
     display: flex;
-    flex-direction: row; /* Ép 4 ô số xếp thành hàng ngang */
-    justify-content: space-between; /* Trải đều khoảng cách giữa các ô */
-    gap: 12px; /* Khoảng cách an toàn giữa các khối số */
-    margin-bottom: 25px; /* Khoảng cách với dòng chữ lưu ý phía dưới */
+    flex-direction: row;
+    /* Ép 4 ô số xếp thành hàng ngang */
+    justify-content: space-between;
+    /* Trải đều khoảng cách giữa các ô */
+    gap: 12px;
+    /* Khoảng cách an toàn giữa các khối số */
+    margin-bottom: 25px;
+    /* Khoảng cách với dòng chữ lưu ý phía dưới */
     width: 100%;
 }
 
 /* --- PHƯƠNG ÁN: CHỮ SỐ TRẮNG TRÊN NỀN TRONG SUỐT (GLASSMORPHISM) --- */
 .countdown-col .countdown-box {
     /* Nền trong suốt pha 12% trắng tạo hiệu ứng mờ nhẹ */
-    background: rgba(255, 255, 255, 0.12); 
-    
+    background: rgba(255, 255, 255, 0.12);
+
     /* Viền trắng siêu mảnh tinh tế */
-    border: 1px solid rgba(255, 255, 255, 0.25); 
-    
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
     border-radius: 12px;
-    padding: 15px 5px; /* Giảm padding ngang của ô số để chữ không bị tràn */
-    
+    padding: 15px 5px;
+    /* Giảm padding ngang của ô số để chữ không bị tràn */
+
     /* ✨ TỐI ƯU HÀNG NGANG: Ép 4 khối chia đều không gian tự động */
     flex: 1;
-    min-width: 0; /* Ngăn chặn hiện tượng vỡ khối trên màn hình nhỏ */
-    
-    box-shadow: none; 
+    min-width: 0;
+    /* Ngăn chặn hiện tượng vỡ khối trên màn hình nhỏ */
+
+    box-shadow: none;
     display: flex;
-    flex-direction: column; /* Giữ số ở trên, chữ ở dưới trong từng ô */
+    flex-direction: column;
+    /* Giữ số ở trên, chữ ở dưới trong từng ô */
     align-items: center;
-    
+
     /* Giúp hiệu ứng hiển thị mượt mà trên Safari/iOS */
-    backdrop-filter: blur(4px); 
+    backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
 }
 
 /* Biến con số thành màu TRẮNG, nổi bật bằng hiệu ứng đổ bóng sẫm màu */
 .countdown-col .countdown-time {
-    color: var(--white); 
-    font-size: 2rem; /* Hạ từ 2.2rem xuống 2rem để hiển thị hàng ngang vừa vặn, không bị nhảy dòng */
+    color: var(--white);
+    font-size: 2rem;
+    /* Hạ từ 2.2rem xuống 2rem để hiển thị hàng ngang vừa vặn, không bị nhảy dòng */
     font-weight: 800;
     line-height: 1.1;
 
@@ -1034,11 +1119,13 @@ footer {
 
 /* Nhãn chữ dưới con số (Ngày, Giờ, Phút, Giây) */
 .countdown-label {
-    color: var(--white); 
-    font-size: 0.7rem; /* Điều chỉnh lại 0.7rem để chữ "NGÀY, PHÚT..." nằm gọn trên 1 dòng */
+    color: var(--white);
+    font-size: 0.7rem;
+    /* Điều chỉnh lại 0.7rem để chữ "NGÀY, PHÚT..." nằm gọn trên 1 dòng */
     margin-top: 6px;
     font-weight: 700;
-    text-transform: uppercase; /* Viết hoa nhìn sẽ gọn gàng và chuẩn UI quốc tế hơn */
+    text-transform: uppercase;
+    /* Viết hoa nhìn sẽ gọn gàng và chuẩn UI quốc tế hơn */
     letter-spacing: 0.5px;
     text-shadow: 0 2px 4px rgba(15, 23, 42, 0.15);
 }
@@ -1057,14 +1144,17 @@ footer {
    CỘT PHẢI: FORM ĐĂNG KÝ
    ========================================== */
 .form-col {
-    flex: 6; /* Chiếm 60% diện tích chiều ngang */
+    flex: 6;
+    /* Chiếm 60% diện tích chiều ngang */
     width: 100%;
 }
 
 .form-col .form-box {
-    max-width: 100%; /* Mở rộng form bằng với khung chứa 60% */
-    border-radius: 16px; /* Đồng bộ bo góc mượt mà */
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08); 
+    max-width: 100%;
+    /* Mở rộng form bằng với khung chứa 60% */
+    border-radius: 16px;
+    /* Đồng bộ bo góc mượt mà */
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
     padding: 40px;
     background: var(--white);
 }
@@ -1078,12 +1168,14 @@ footer {
     letter-spacing: 0.5px;
     line-height: 1.4;
 }
+
 /* ==========================================================================
    MỐC 1: RESPONSIVE CHO MÁY TÍNH BẢNG (MÀN HÌNH DƯỚI 992PX)
    ========================================================================== */
 @media (max-width: 992px) {
     .registration-layout {
-        flex-direction: column; /* Rớt thành hàng dọc */
+        flex-direction: column;
+        /* Rớt thành hàng dọc */
         gap: 30px;
     }
 
@@ -1100,6 +1192,7 @@ footer {
    MỐC 2: TẤT CẢ CSS RESPONSIVE CHO ĐIỆN THOẠI (MÀN HÌNH DƯỚI 768PX)
    ========================================================================== */
 @media (max-width: 768px) {
+
     /* --- 1. Cấu Hình Khung Nền & Tiêu Đề Hero --- */
     section {
         padding: 50px 0;
@@ -1119,12 +1212,14 @@ footer {
 
     /* --- 2. Tối Ưu Thanh Menu & Nút Giao Diện --- */
     .nav-container .logo {
-        display: none !important; /* Ẩn chữ logo theo yêu cầu */
+        display: none !important;
+        /* Ẩn chữ logo theo yêu cầu */
     }
 
     .nav-container {
         display: flex;
-        justify-content: flex-end; /* Đẩy nút menu về bên phải */
+        justify-content: flex-end;
+        /* Đẩy nút menu về bên phải */
         align-items: center;
         width: 100%;
         padding: 0 20px;
@@ -1155,9 +1250,11 @@ footer {
     .menu-toggle.active .bar:nth-child(1) {
         transform: translateY(8px) rotate(45deg);
     }
+
     .menu-toggle.active .bar:nth-child(2) {
         opacity: 0;
     }
+
     .menu-toggle.active .bar:nth-child(3) {
         transform: translateY(-9px) rotate(-45deg);
     }
@@ -1197,7 +1294,7 @@ footer {
         width: 100%;
         cursor: pointer;
     }
-    
+
     .nav-menu li .btn-register {
         display: inline-block;
         width: auto;
@@ -1272,9 +1369,11 @@ footer {
    ========================================================================== */
 @media (min-width: 769px) {
     .menu-toggle {
-        display: none; /* Ẩn nút 3 gạch khi xem trên PC */
+        display: none;
+        /* Ẩn nút 3 gạch khi xem trên PC */
     }
 }
+
 .btn-register {
     background-color: var(--btn-color);
     /* Màu nền xanh đậm giống chữ THẠC SĨ */
