@@ -313,94 +313,189 @@
     </section>
 
 
-    <section id="lien-he" class="contact">
-        <div class="container">
-            <h2 class="section-title">Nhận Tư Vấn & Lịch Tuyển Sinh</h2>
+    <section id="lien-he" class="contact"
+        style="background-color: #0d2c54; padding: 60px 0; color: #ffffff; font-family: Arial, sans-serif;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
 
-            <div class="registration-layout">
-                <div class="countdown-col">
-                    <div class="incentive-text">
-                        <h3>Thời Gian Nhận Ưu Đãi Chỉ Còn:</h3>
+            <div class="registration-layout"
+                style="display: flex; flex-direction: row; align-items: stretch; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
+
+                <!-- CỘT TRÁI: Tiêu đề, văn bản mô tả và Bộ đếm làm to -->
+                <div class="countdown-col"
+                    style="flex: 1; min-width: 350px; display: flex; flex-direction: column; justify-content: flex-start; gap: 15px;">
+                    <h2 class="main-title"
+                        style="color: #e5b842; font-size: 36px; font-weight: bold; margin: 0; text-transform: uppercase;">
+                        ĐĂNG KÝ XÉT TUYỂN</h2>
+
+                    <p class="sub-title" style="font-size: 16px; line-height: 1.5; color: #e0e0e0; margin: 0;">
+                        Điền thông tin để nhận tư vấn và checklist hồ sơ. Chúng tôi liên hệ xác nhận trong giờ hành
+                        chính.
+                    </p>
+
+                    <!-- BỘ ĐẾM NGƯỢC: Đẩy lên trên và phóng to kích thước khung -->
+                    <div class="countdown-section" style="margin: 5px 0 10px 0;">
+                        <h3
+                            style="font-size: 16px; color: #ffffff; margin: 0 0 15px 0; font-weight: normal; letter-spacing: 0.5px;">
+                            Thời Gian Nhận Ưu Đãi Chỉ Còn:</h3>
+                        <div class="countdown-container" style="display: flex; gap: 12px;">
+
+                            <!-- Ô Ngày -->
+                            <div class="countdown-box"
+                                style="background: rgba(255, 255, 255, 0.08); padding: 15px 10px; border-radius: 8px; text-align: center; min-width: 80px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                                <span class="countdown-time" id="days"
+                                    style="display: block; font-size: 36px; font-weight: bold; color: #e5b842; line-height: 1.1; font-family: 'Courier New', Courier, monospace;">14</span>
+                                <span class="countdown-label"
+                                    style="font-size: 12px; color: #bbb; text-transform: uppercase; font-weight: bold; margin-top: 4px; display: block;">Ngày</span>
+                            </div>
+
+                            <!-- Ô Giờ -->
+                            <div class="countdown-box"
+                                style="background: rgba(255, 255, 255, 0.08); padding: 15px 10px; border-radius: 8px; text-align: center; min-width: 80px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                                <span class="countdown-time" id="hours"
+                                    style="display: block; font-size: 36px; font-weight: bold; color: #e5b842; line-height: 1.1; font-family: 'Courier New', Courier, monospace;">23</span>
+                                <span class="countdown-label"
+                                    style="font-size: 12px; color: #bbb; text-transform: uppercase; font-weight: bold; margin-top: 4px; display: block;">Giờ</span>
+                            </div>
+
+                            <!-- Ô Phút -->
+                            <div class="countdown-box"
+                                style="background: rgba(255, 255, 255, 0.08); padding: 15px 10px; border-radius: 8px; text-align: center; min-width: 80px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                                <span class="countdown-time" id="minutes"
+                                    style="display: block; font-size: 36px; font-weight: bold; color: #e5b842; line-height: 1.1; font-family: 'Courier New', Courier, monospace;">59</span>
+                                <span class="countdown-label"
+                                    style="font-size: 12px; color: #bbb; text-transform: uppercase; font-weight: bold; margin-top: 4px; display: block;">Phút</span>
+                            </div>
+
+                            <!-- Ô Giây -->
+                            <div class="countdown-box"
+                                style="background: rgba(255, 255, 255, 0.08); padding: 15px 10px; border-radius: 8px; text-align: center; min-width: 80px; border: 1px solid rgba(255,255,255,0.15); box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+                                <span class="countdown-time" id="seconds"
+                                    style="display: block; font-size: 36px; font-weight: bold; color: #e5b842; line-height: 1.1; font-family: 'Courier New', Courier, monospace;">42</span>
+                                <span class="countdown-label"
+                                    style="font-size: 12px; color: #bbb; text-transform: uppercase; font-weight: bold; margin-top: 4px; display: block;">Giây</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="countdown-container">
-                        <div class="countdown-box">
-                            <span class="countdown-time" id="days">00</span>
-                            <span class="countdown-label">Ngày</span>
-                        </div>
-                        <div class="countdown-box">
-                            <span class="countdown-time" id="hours">00</span>
-                            <span class="countdown-label">Giờ</span>
-                        </div>
-                        <div class="countdown-box">
-                            <span class="countdown-time" id="minutes">00</span>
-                            <span class="countdown-label">Phút</span>
-                        </div>
-                        <div class="countdown-box">
-                            <span class="countdown-time" id="seconds">00</span>
-                            <span class="countdown-label">Giây</span>
-                        </div>
-                    </div>
-                    <p class="countdown-note">Nhanh tay đăng ký để không bỏ lỡ suất học bổng và lộ trình học tập ưu
-                        tiên!</p>
+
+                    <!-- Văn bản quyền lợi phụ bên dưới bộ đếm -->
+                    <ul class="benefit-list"
+                        style="list-style: none; padding-left: 0; margin: 0; display: flex; flex-direction: column; gap: 12px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                        <li style="font-size: 15px; position: relative; padding-left: 20px; line-height: 1.4;">
+                            <span
+                                style="color: #e5b842; position: absolute; left: 0; font-size: 18px; line-height: 1;">•</span>
+                            Miễn phí tư vấn & hướng dẫn chuẩn bị hồ sơ
+                        </li>
+                        <li style="font-size: 15px; position: relative; padding-left: 20px; line-height: 1.4;">
+                            <span
+                                style="color: #e5b842; position: absolute; left: 0; font-size: 18px; line-height: 1;">•</span>
+                            Gợi ý lộ trình học theo mục tiêu cá nhân
+                        </li>
+                        <li style="font-size: 15px; position: relative; padding-left: 20px; line-height: 1.4;">
+                            <span
+                                style="color: #e5b842; position: absolute; left: 0; font-size: 18px; line-height: 1;">•</span>
+                            Nhắc lịch khai giảng & mốc nộp hồ sơ
+                        </li>
+                    </ul>
                 </div>
 
-                <div class="form-col">
-                    <div class="form-box">
-                        <form id="landingForm" class="registration-form">
-                            <div class="form-group">
-                                <label for="name">Họ và Tên <span class="required">*</span></label>
-                                <input type="text" id="name" placeholder="Ví dụ: Nguyễn Văn A">
-                                <span class="error-msg" id="nameErr">Vui lòng nhập họ và tên</span>
+                <!-- CỘT PHẢI: Khung Form màu kem sữa bo góc mềm mại -->
+                <div class="form-col" style="flex: 1; min-width: 380px;">
+                    <div class="form-box"
+                        style="background-color: #ededed; padding: 30px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); color: #333333;">
+                        <h3
+                            style="text-align: center; color: #d1a12c; font-size: 22px; font-weight: bold; margin: 0 0 20px 0; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Đăng Ký Xét Tuyển Thạc Sĩ</h3>
+
+                        <form id="landingForm" class="registration-form"
+                            style="display: flex; flex-direction: column; gap: 12px;">
+
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 4px;">
+                                <label for="name" style="font-size: 14px; font-weight: bold; color: #222;">Họ và Tên
+                                    <span class="required" style="color: red;">*</span></label>
+                                <input type="text" id="name" placeholder="Ví dụ: Nguyễn Văn A"
+                                    style="padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; background: #fff; box-sizing: border-box; width: 100%;">
+                                <span class="error-msg" id="nameErr"
+                                    style="display: none; color: red; font-size: 12px; margin-top: 2px;">Vui lòng nhập
+                                    họ và tên</span>
                             </div>
 
-                            <div class="form-group">
-                                <label for="dob">Ngày tháng năm sinh <span class="required">*</span></label>
-                                <input type="date" id="dob">
-                                <span class="error-msg" id="dobErr">Vui lòng chọn ngày tháng năm sinh</span>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 4px;">
+                                <label for="dob" style="font-size: 14px; font-weight: bold; color: #222;">Ngày tháng năm
+                                    sinh <span class="required" style="color: red;">*</span></label>
+                                <input type="date" id="dob"
+                                    style="padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; background: #fff; box-sizing: border-box; width: 100%;">
+                                <span class="error-msg" id="dobErr"
+                                    style="display: none; color: red; font-size: 12px; margin-top: 2px;">Vui lòng chọn
+                                    ngày tháng năm sinh</span>
                             </div>
 
-                            <div class="form-group">
-                                <label for="phone">Số điện thoại <span class="required">*</span></label>
-                                <input type="tel" id="phone" placeholder="Ví dụ: 0912345678">
-                                <span class="error-msg" id="phoneErr">Số điện thoại không hợp lệ (phải gồm 10 số
-                                    VN)</span>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 4px;">
+                                <label for="phone" style="font-size: 14px; font-weight: bold; color: #222;">Số điện
+                                    thoại <span class="required" style="color: red;">*</span></label>
+                                <input type="tel" id="phone" placeholder="Ví dụ: 0912345678"
+                                    style="padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; background: #fff; box-sizing: border-box; width: 100%;">
+                                <span class="error-msg" id="phoneErr"
+                                    style="display: none; color: red; font-size: 12px; margin-top: 2px;">Số điện thoại
+                                    không hợp lệ (phải gồm 10 số VN)</span>
                             </div>
 
-                            <div class="form-group">
-                                <label for="majorTarget">Ngành muốn học <span class="required">*</span></label>
-                                <select id="majorTarget">
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 4px;">
+                                <label for="majorTarget" style="font-size: 14px; font-weight: bold; color: #222;">Ngành
+                                    muốn học <span class="required" style="color: red;">*</span></label>
+                                <select id="majorTarget"
+                                    style="padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; background-color: #fff; box-sizing: border-box; width: 100%;">
                                     <option value="">-- Chọn ngành muốn đăng ký học --</option>
                                     <option value="cntt">Công nghệ thông tin</option>
                                     <option value="qtkd">Quản trị kinh doanh</option>
                                     <option value="ngonngu">Ngôn ngữ Anh</option>
                                     <option value="marketing">Digital Marketing</option>
                                 </select>
-                                <span class="error-msg" id="majorTargetErr">Vui lòng chọn ngành muốn học</span>
+                                <span class="error-msg" id="majorTargetErr"
+                                    style="display: none; color: red; font-size: 12px; margin-top: 2px;">Vui lòng chọn
+                                    ngành muốn học</span>
                             </div>
 
-                            <div class="form-group">
-                                <label for="majorGraduated">Ngành đã tốt nghiệp <span class="required">*</span></label>
+                            <div class="form-group" style="display: flex; flex-direction: column; gap: 4px;">
+                                <label for="majorGraduated"
+                                    style="font-size: 14px; font-weight: bold; color: #222;">Ngành đã tốt nghiệp <span
+                                        class="required" style="color: red;">*</span></label>
                                 <input type="text" id="majorGraduated"
-                                    placeholder="Ví dụ: Cử nhân Kế toán / Kỹ thuật phần mềm">
-                                <span class="error-msg" id="majorGraduatedErr">Vui lòng nhập ngành đã tốt nghiệp</span>
+                                    placeholder="Ví dụ: Cử nhân Kế toán / Kỹ thuật phần mềm"
+                                    style="padding: 10px 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; background: #fff; box-sizing: border-box; width: 100%;">
+                                <span class="error-msg" id="majorGraduatedErr"
+                                    style="display: none; color: red; font-size: 12px; margin-top: 2px;">Vui lòng nhập
+                                    ngành đã tốt nghiệp</span>
                             </div>
 
-                            <div class="form-group signup-radio-group">
-                                <label>Đã có chứng chỉ tiếng Anh B1 chưa? <span class="required">*</span></label>
-                                <div class="radio-options">
-                                    <label class="radio-label">
+                            <div class="form-group signup-radio-group"
+                                style="display: flex; flex-direction: column; gap: 6px;">
+                                <label style="font-size: 14px; font-weight: bold; color: #222;">Đã có chứng chỉ tiếng
+                                    Anh B1 chưa? <span class="required" style="color: red;">*</span></label>
+                                <div class="radio-options" style="display: flex; gap: 20px;">
+                                    <label class="radio-label"
+                                        style="font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 4px;">
                                         <input type="radio" name="b1Certificate" value="da-co"> Đã có
                                     </label>
-                                    <label class="radio-label">
+                                    <label class="radio-label"
+                                        style="font-size: 14px; cursor: pointer; display: flex; align-items: center; gap: 4px;">
                                         <input type="radio" name="b1Certificate" value="chua-co"> Chưa có
                                     </label>
                                 </div>
-                                <span class="error-msg" id="b1Err">Vui lòng xác nhận trạng thái chứng chỉ B1</span>
+                                <span class="error-msg" id="b1Err"
+                                    style="display: none; color: red; font-size: 12px; margin-top: 2px;">Vui lòng xác
+                                    nhận trạng thái chứng chỉ B1</span>
                             </div>
-                            <button type="submit" class="submit-btn">Đăng Ký</button>
+
+                            <div style="text-align: center; margin-top: 10px;">
+                                <button type="submit" class="submit-btn"
+                                    style="background: linear-gradient(180deg, #f3d36b 0%, #d9aa28 100%); color: #222222; padding: 11px 60px; font-size: 16px; font-weight: bold; border: none; border-radius: 25px; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.15); display: inline-block; text-transform: uppercase;">Đăng
+                                    ký</button>
+                            </div>
+
                         </form>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
