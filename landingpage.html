@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tuyển Sinh Thạc Sĩ - Quốc Tế Việt</title>
-
     <link rel="stylesheet" href="main.css">
 </head>
 
@@ -13,17 +12,14 @@
 
     <nav class="navbar">
         <div class="nav-container">
-            <!-- Giữ nguyên cấu trúc logo của bạn -->
             <div class="logo">THẠC SĨ<span> QUỐC TẾ VIỆT</span></div>
 
-            <!-- NÚT MENU HAMBURGER CHO ĐIỆN THOẠI (MỚI THÊM) -->
             <button class="menu-toggle" id="menuToggle" aria-label="Mở Menu">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </button>
 
-            <!-- Giữ nguyên các mục menu của bạn -->
             <ul class="nav-menu" id="navMenu">
                 <li><a onclick="scrollToSection('trang-chu')">Trang Chủ</a></li>
                 <li><a onclick="scrollToSection('gioi-thieu')">Giới Thiệu</a></li>
@@ -34,8 +30,7 @@
         </div>
     </nav>
 
-    <section id="trang-chu" class="hero">
-    </section>
+    <section id="trang-chu" class="hero"></section>
 
     <section id="gioi-thieu" class="about">
         <div class="container">
@@ -46,21 +41,14 @@
                     <p>Viện Sau Đại học luôn đi đầu trong việc cung cấp các chương trình đào tạo Thạc sĩ ứng dụng cao.
                         Chúng tôi không chỉ cung cấp tri thức hàn lâm thuần túy, mà tập trung cải tiến năng lực quản
                         trị, giải quyết triệt để các thách thức kinh doanh thực tế toàn cầu.</p>
-                    <p style="margin-top: 15px;">Hơn 85% học viên tốt nghiệp hiện đang nắm giữ các vị trí quản lý cốt
-                        lõi, Giám đốc điều hành tại các doanh nghiệp và tập đoàn công nghệ lớn.</p>
+                    <p class="mt-3">Hơn 85% học viên tốt nghiệp hiện đang nắm giữ các vị trí quản lý cốt lõi, Giám đốc điều hành tại các doanh nghiệp và tập đoàn công nghệ lớn.</p>
                 </div>
 
                 <div class="slider-container">
                     <div class="slider-wrapper" id="sliderWrapper">
-                        <div class="slide"
-                            style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600');">
-                        </div>
-                        <div class="slide"
-                            style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600');">
-                        </div>
-                        <div class="slide"
-                            style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600');">
-                        </div>
+                        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?q=80&w=600');"></div>
+                        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=600');"></div>
+                        <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=600');"></div>
                     </div>
                     <button class="slide-btn prev" onclick="moveSlide(-1)">&#10094;</button>
                     <button class="slide-btn next" onclick="moveSlide(1)">&#10095;</button>
@@ -68,6 +56,7 @@
             </div>
         </div>
     </section>
+
     <section id="nganh-dao-tao" class="programs">
         <div class="container">
             <h2 class="section-title">Ngành Đào Tạo Trọng Điểm</h2>
@@ -75,48 +64,43 @@
                 <div class="card">
                     <h3>Quản Trị Giáo Dục</h3>
                     <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Đào tạo tư duy chiến lược về xây dựng chương trình, quản lý nhân sự và vận hành tối ưu các tổ
-                        chức giáo dục hiện đại trong kỷ nguyên số.</p>
+                    <p>Đào tạo tư duy chiến lược về xây dựng chương trình, quản lý nhân sự và vận hành tối ưu các tổ chức giáo dục hiện đại trong kỷ nguyên số.</p>
                 </div>
 
                 <div class="card">
                     <h3>Tâm Lý Học</h3>
                     <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Nghiên cứu sâu về hành vi và tư duy con người, trang bị kỹ năng tham vấn, trị liệu chuyên nghiệp
-                        và ứng dụng thấu hiểu tâm lý trong quản trị.</p>
+                    <p>Nghiên cứu sâu về hành vi và tư duy con người, trang bị kỹ năng tham vấn, trị liệu chuyên nghiệp và ứng dụng thấu hiểu tâm lý trong quản trị.</p>
                 </div>
 
                 <div class="card">
                     <h3>Sư Phạm</h3>
                     <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Nâng cao năng lực giảng dạy tích hợp công nghệ giáo dục (EdTech) tiên tiến, giúp phát triển tư
-                        duy sáng tạo và dẫn dắt thế hệ trẻ hội nhập.</p>
+                    <p>Nâng cao năng lực giảng dạy tích hợp công nghệ giáo dục (EdTech) tiên tiến, giúp phát triển tư duy sáng tạo và dẫn dắt thế hệ trẻ hội nhập.</p>
                 </div>
 
                 <div class="card">
                     <h3>Kinh Tế</h3>
                     <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Làm chủ quy luật thị trường, rèn luyện kỹ năng phân tích dữ liệu vĩ mô và hoạch định chính sách
-                        chiến lược cho doanh nghiệp hoặc tổ chức.</p>
+                    <p>Làm chủ quy luật thị trường, rèn luyện kỹ năng phân tích dữ liệu vĩ mô và hoạch định chính sách chiến lược cho doanh nghiệp hoặc tổ chức.</p>
                 </div>
 
                 <div class="card">
                     <h3>Công Nghệ Thông Tin</h3>
                     <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Chuyên sâu về Trí tuệ nhân tạo (AI), Khoa học dữ liệu và Bảo mật hệ thống, đón đầu xu hướng
-                        chuyển đổi số toàn cầu.</p>
+                    <p>Chuyên sâu về Trí tuệ nhân tạo (AI), Khoa học dữ liệu và Bảo mật hệ thống, đón đầu xu hướng chuyển đổi số toàn cầu.</p>
                 </div>
 
                 <div class="card">
                     <h3>Quản Trị Kinh Doanh</h3>
                     <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Phát triển năng lực lãnh đạo toàn diện, tối ưu hóa mô hình kinh doanh, quản trị dòng tiền và
-                        chiến lược marketing thực chiến.</p>
+                    <p>Phát triển năng lực lãnh đạo toàn diện, tối ưu hóa mô hình kinh doanh, quản trị dòng tiền và chiến lược marketing thực chiến.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section class="roadmap" style="background-color: var(--bg-light);">
+
+    <section class="roadmap bg-light">
         <div class="container">
             <h2 class="section-title">Quy Trình Nhập Học Đơn Giản</h2>
             <div class="grid-3">
@@ -138,129 +122,103 @@
             </div>
         </div>
     </section>
+
     <section class="partners">
         <div class="container">
-            <p
-                style="text-align: center; margin-bottom: 25px; color: #64748b; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
-                Đối tác chiến lược & Liên kết đào tạo
-            </p>
+            <p class="partner-heading">Đối tác chiến lược & Liên kết đào tạo</p>
 
             <div class="partner-slider">
                 <div class="partner-track">
-
                     <div class="partner-item">
-                        <a href="https://ts.huit.edu.vn/" target="_blank" class="partner-box">
-                            <img src="img/logoHUIT.jpg" alt="HUIT">
+                        <a href="https://ts.huit.edu.vn/" target="_blank" rel="noopener" class="partner-box">
+                            <img src="img/logoHUIT.jpg" alt="Trường Đại học Công thương TP.HCM" loading="lazy">
                         </a>
                     </div>
                     <div class="partner-item">
-                        <a href="https://www.hvu.edu.vn/" target="_blank" class="partner-box">
-                            <img src="img/logoHVU.jpg" alt="HVU">
+                        <a href="https://www.hvu.edu.vn/" target="_blank" rel="noopener" class="partner-box">
+                            <img src="img/logoHVU.jpg" alt="Đại học Hùng Vương" loading="lazy">
                         </a>
                     </div>
                     <div class="partner-item">
-                        <a href="https://www.dthu.edu.vn/" target="_blank" class="partner-box">
-                            <img src="img/logoDT.jpg" alt="DTHU">
+                        <a href="https://www.dthu.edu.vn/" target="_blank" rel="noopener" class="partner-box">
+                            <img src="img/logoDT.jpg" alt="Đại học Đồng Tháp" loading="lazy">
                         </a>
                     </div>
                     <div class="partner-item">
-                        <a href="https://ued.udn.vn/" target="_blank" class="partner-box">
-                            <img src="img/logoUED.jpg" alt="UED">
+                        <a href="https://ued.udn.vn/" target="_blank" rel="noopener" class="partner-box">
+                            <img src="img/logoUED.jpg" alt="Đại học Sư phạm - ĐH Đà Nẵng" loading="lazy">
                         </a>
                     </div>
                     <div class="partner-item">
-                        <a href="https://hcm.edu.vn/homehcm" target="_blank" class="partner-box">
-                            <img src="img/logoSoGD.jpg" alt="SoGD">
+                        <a href="https://hcm.edu.vn/homehcm" target="_blank" rel="noopener" class="partner-box">
+                            <img src="img/logoSoGD.jpg" alt="Sở Giáo dục và Đào tạo TP.HCM" loading="lazy">
                         </a>
                     </div>
                     <div class="partner-item">
-                        <a href="https://thtrandainghia.hcm.edu.vn/homegd5" target="_blank" class="partner-box">
-                            <img src="img/logoTDN.jpg" alt="TDN">
+                        <a href="https://thtrandainghia.hcm.edu.vn/homegd5" target="_blank" rel="noopener" class="partner-box">
+                            <img src="img/logoTDN.jpg" alt="Trường THPT Chuyên Trần Đại Nghĩa" loading="lazy">
                         </a>
                     </div>
-
+                    
                     <div class="partner-item">
-                        <a href="https://ts.huit.edu.vn/" target="_blank" class="partner-box">
-                            <img src="img/logoHUIT.jpg" alt="HUIT">
-                        </a>
-                    </div>
-                    <div class="partner-item">
-                        <a href="https://www.hvu.edu.vn/" target="_blank" class="partner-box">
-                            <img src="img/logoHVU.jpg" alt="HVU">
+                        <a href="https://ts.huit.edu.vn/" target="_blank" rel="noopener" class="partner-box">
+                            <img src="img/logoHUIT.jpg" alt="Trường Đại học Công thương TP.HCM" loading="lazy">
                         </a>
                     </div>
                     <div class="partner-item">
-                        <a href="https://www.dthu.edu.vn/" target="_blank" class="partner-box">
-                            <img src="img/logoDT.jpg" alt="DTHU">
+                        <a href="https://www.hvu.edu.vn/" target="_blank" rel="noopener" class="partner-box">
+                            <img src="img/logoHVU.jpg" alt="Đại học Hùng Vương" loading="lazy">
                         </a>
                     </div>
                     <div class="partner-item">
-                        <a href="https://ued.udn.vn/" target="_blank" class="partner-box">
-                            <img src="img/logoUED.jpg" alt="UED">
+                        <a href="https://www.dthu.edu.vn/" target="_blank" rel="noopener" class="partner-box">
+                            <img src="img/logoDT.jpg" alt="Đại học Đồng Tháp" loading="lazy">
                         </a>
                     </div>
                     <div class="partner-item">
-                        <a href="https://hcm.edu.vn/homehcm" target="_blank" class="partner-box">
-                            <img src="img/logoSoGD.jpg" alt="SoGD">
+                        <a href="https://ued.udn.vn/" target="_blank" rel="noopener" class="partner-box">
+                            <img src="img/logoUED.jpg" alt="Đại học Sư phạm - ĐH Đà Nẵng" loading="lazy">
                         </a>
                     </div>
                     <div class="partner-item">
-                        <a href="https://thtrandainghia.hcm.edu.vn/homegd5" target="_blank" class="partner-box">
-                            <img src="img/logoTDN.jpg" alt="TDN">
+                        <a href="https://hcm.edu.vn/homehcm" target="_blank" rel="noopener" class="partner-box">
+                            <img src="img/logoSoGD.jpg" alt="Sở Giáo dục và Đào tạo TP.HCM" loading="lazy">
                         </a>
                     </div>
-
+                    <div class="partner-item">
+                        <a href="https://thtrandainghia.hcm.edu.vn/homegd5" target="_blank" rel="noopener" class="partner-box">
+                            <img src="img/logoTDN.jpg" alt="Trường THPT Chuyên Trần Đại Nghĩa" loading="lazy">
+                        </a>
+                    </div>
                 </div>
             </div>
-
         </div>
     </section>
 
-    <section class="incentives" style="background-color: var(--white); padding: 50px 0;">
+    <section class="incentives bg-white">
         <div class="container">
-            <h2 class="section-title" style="text-align: center; margin-bottom: 40px;">Tài Nguyên Miễn Phí Dành Cho Bạn
-            </h2>
+            <h2 class="section-title">Tài Nguyên Miễn Phí Dành Cho Bạn</h2>
 
-            <div class="about-content"
-                style="display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap;">
-
-                <div class="incentive-video" style="flex: 1; min-width: 350px;">
-                    <div class="video-wrapper"
-                        style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); background: #000;">
-
-                        <a href="https://youtu.be/KelpjDfiuB4" target="_blank"
-                            style="display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                            <img src="https://i.ytimg.com/vi/KelpjDfiuB4/maxresdefault.jpg" alt="Học cao học"
-                                style="width: 100%; height: 100%; object-fit: cover; border: none;">
-
-                            <div
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(224, 34, 34, 0.9); width: 68px; height: 48px; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; transition: background 0.2s;">
-                                ▶
-                            </div>
+            <div class="about-content flex-layout">
+                <div class="incentive-video">
+                    <div class="video-wrapper">
+                        <a href="https://youtu.be/KelpjDfiuB4" target="_blank" rel="noopener" class="video-link">
+                            <img src="https://i.ytimg.com/vi/KelpjDfiuB4/maxresdefault.jpg" alt="Video cẩm nang học cao học thực chiến" loading="lazy">
+                            <div class="play-button">▶</div>
                         </a>
-
                     </div>
                 </div>
 
-                <div class="incentive-text" style="flex: 1; min-width: 350px;">
-                    <h3 style="font-size: 24px; margin-bottom: 15px; color: #333;">Đặc quyền tháng này!</h3>
-                    <p style="margin-bottom: 20px; font-size: 16px; line-height: 1.6; color: #666;">
-                        Đăng ký nhận ngay trọn bộ Ebook <strong>"Cẩm nang Sống sót qua mùa Cao học dành cho Người bận
-                            rộn"</strong> do các cựu học viên xuất sắc biên soạn độc quyền.
-                    </p>
-                    <ul style="list-style: none; padding-left: 0; margin-bottom: 25px;">
-                        <li style="margin-bottom: 12px; font-size: 15px; color: #444;">⭐ Mẹo sắp xếp thời gian học và
-                            làm việc</li>
-                        <li style="margin-bottom: 12px; font-size: 15px; color: #444;">⭐ Đề cương ôn tập các môn cơ sở
-                        </li>
-                        <li style="margin-bottom: 12px; font-size: 15px; color: #444;">⭐ Bí quyết bảo vệ luận văn đạt
-                            điểm tuyệt đối</li>
+                <div class="incentive-text">
+                    <h3>Đặc quyền tháng này!</h3>
+                    <p>Đăng ký nhận ngay trọn bộ Ebook <strong>"Cẩm nang Sống sót qua mùa Cao học dành cho Người bận rộn"</strong> do các cựu học viên xuất sắc biên soạn độc quyền.</p>
+                    <ul class="incentive-list">
+                        <li>⭐ Mẹo sắp xếp thời gian học và làm việc</li>
+                        <li>⭐ Đề cương ôn tập các môn cơ sở</li>
+                        <li>⭐ Bí quyết bảo vệ luận văn đạt điểm tuyệt đối</li>
                     </ul>
-                    <button class="btn" onclick="scrollToSection('lien-he')"
-                        style="cursor: pointer; background-color: #0060a9; color: #fff; padding: 10px 20px; border: none; border-radius: 4px; font-weight: bold;">ĐĂNG
-                        KÝ NHẬN TÀI LIỆU</button>
+                    <button class="btn btn-primary-custom" onclick="scrollToSection('lien-he')">ĐĂNG KÝ NHẬN TÀI LIỆU</button>
                 </div>
-
             </div>
         </div>
     </section>
@@ -287,8 +245,7 @@
             <h2 class="section-title">Học Viên Nói Gì Về Chúng Tôi?</h2>
             <div class="grid-3">
                 <div class="review-card">
-                    <p class="review-text">"Lịch học cuối tuần kết hợp online cực kỳ tối ưu giúp tôi vừa hoàn thành tốt
-                        công việc điều hành tại công ty vừa lấy được tấm bằng Thạc sĩ danh giá."</p>
+                    <p class="review-text">"Lịch học cuối tuần kết hợp online cực kỳ tối ưu giúp tôi vừa hoàn thành tốt công việc điều hành tại công ty vừa lấy được tấm bằng Thạc sĩ danh giá."</p>
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">TH</div>
                         <div class="reviewer-name">
@@ -298,8 +255,7 @@
                     </div>
                 </div>
                 <div class="review-card">
-                    <p class="review-text">"Các case-study trong chương trình học CNTT cực kỳ sát với các dự án lớn
-                        ngoài đời thực. Giảng viên hướng dẫn rất tận tình."</p>
+                    <p class="review-text">"Các case-study trong chương trình học CNTT cực kỳ sát với các dự án lớn ngoài đời thực. Giảng viên hướng dẫn rất tận tình."</p>
                     <div class="reviewer-info">
                         <div class="reviewer-avatar">MT</div>
                         <div class="reviewer-name">
@@ -312,45 +268,33 @@
         </div>
     </section>
 
-
     <section id="lien-he" class="contact">
         <div class="container">
-
             <div class="registration-layout">
 
                 <div class="countdown-col">
                     <h2 class="main-title">ĐĂNG KÝ XÉT TUYỂN</h2>
-
-                    <p class="sub-title">
-                        Điền thông tin để nhận tư vấn và checklist hồ sơ. Chúng tôi liên hệ xác nhận trong giờ hành
-                        chính.
-                    </p>
+                    <p class="sub-title">Điền thông tin để nhận tư vấn và checklist hồ sơ. Chúng tôi liên hệ xác nhận trong giờ hành chính.</p>
 
                     <div class="countdown-section">
                         <h3>Thời Gian Nhận Ưu Đãi Chỉ Còn:</h3>
-
                         <div class="countdown-container">
-
                             <div class="countdown-box">
                                 <span class="countdown-time" id="days">14</span>
                                 <span class="countdown-label">Ngày</span>
                             </div>
-
                             <div class="countdown-box">
                                 <span class="countdown-time" id="hours">23</span>
                                 <span class="countdown-label">Giờ</span>
                             </div>
-
                             <div class="countdown-box">
                                 <span class="countdown-time" id="minutes">59</span>
                                 <span class="countdown-label">Phút</span>
                             </div>
-
                             <div class="countdown-box">
                                 <span class="countdown-time" id="seconds">42</span>
                                 <span class="countdown-label">Giây</span>
                             </div>
-
                         </div>
                     </div>
 
@@ -363,130 +307,70 @@
 
                 <div class="form-col">
                     <div class="form-box">
-
                         <h3>Đăng Ký Xét Tuyển Thạc Sĩ</h3>
 
                         <form id="landingForm" class="registration-form">
+                            <div class="form-group">
+                                <label for="name">Họ và Tên <span class="required">*</span></label>
+                                <input type="text" id="name" placeholder="Ví dụ: Nguyễn Văn A">
+                                <span class="error-msg" id="nameErr">Vui lòng nhập họ và tên</span>
+                            </div>
 
-                            <form id="landingForm" class="registration-form">
+                            <div class="form-group">
+                                <label for="dob">Ngày tháng năm sinh <span class="required">*</span></label>
+                                <input type="date" id="dob">
+                                <span class="error-msg" id="dobErr">Vui lòng chọn ngày tháng năm sinh</span>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="name">
-                                        Họ và Tên
-                                        <span class="required">*</span>
+                            <div class="form-group">
+                                <label for="phone">Số điện thoại <span class="required">*</span></label>
+                                <input type="tel" id="phone" placeholder="Ví dụ: 0912345678">
+                                <span class="error-msg" id="phoneErr">Số điện thoại không hợp lệ (phải gồm 10 số VN)</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="majorTarget">Ngành muốn học <span class="required">*</span></label>
+                                <select id="majorTarget">
+                                    <option value="">-- Chọn ngành muốn đăng ký học --</option>
+                                    <option value="cntt">Công nghệ thông tin</option>
+                                    <option value="qtkd">Quản trị kinh doanh</option>
+                                    <option value="ngonngu">Ngôn ngữ Anh</option>
+                                    <option value="marketing">Digital Marketing</option>
+                                </select>
+                                <span class="error-msg" id="majorTargetErr">Vui lòng chọn ngành muốn học</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="majorGraduated">Ngành đã tốt nghiệp <span class="required">*</span></label>
+                                <input type="text" id="majorGraduated" placeholder="Ví dụ: Cử nhân Kế toán / Kỹ thuật phần mềm">
+                                <span class="error-msg" id="majorGraduatedErr">Vui lòng nhập ngành đã tốt nghiệp</span>
+                            </div>
+
+                            <div class="form-group signup-radio-group">
+                                <label>Đã có chứng chỉ tiếng Anh B1 chưa? <span class="required">*</span></label>
+                                <div class="radio-options">
+                                    <label class="radio-label">
+                                        <input type="radio" name="b1Certificate" value="da-co"> Đã có
                                     </label>
-
-                                    <input type="text" id="name" placeholder="Ví dụ: Nguyễn Văn A">
-
-                                    <span class="error-msg" id="nameErr">
-                                        Vui lòng nhập họ và tên
-                                    </span>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="dob">
-                                        Ngày tháng năm sinh
-                                        <span class="required">*</span>
+                                    <label class="radio-label">
+                                        <input type="radio" name="b1Certificate" value="chua-co"> Chưa có
                                     </label>
-
-                                    <input type="date" id="dob">
-
-                                    <span class="error-msg" id="dobErr">
-                                        Vui lòng chọn ngày tháng năm sinh
-                                    </span>
                                 </div>
+                                <span class="error-msg" id="b1Err">Vui lòng xác nhận trạng thái chứng chỉ B1</span>
+                            </div>
 
-                                <div class="form-group">
-                                    <label for="phone">
-                                        Số điện thoại
-                                        <span class="required">*</span>
-                                    </label>
-
-                                    <input type="tel" id="phone" placeholder="Ví dụ: 0912345678">
-
-                                    <span class="error-msg" id="phoneErr">
-                                        Số điện thoại không hợp lệ (phải gồm 10 số VN)
-                                    </span>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="majorTarget">
-                                        Ngành muốn học
-                                        <span class="required">*</span>
-                                    </label>
-
-                                    <select id="majorTarget">
-                                        <option value="">-- Chọn ngành muốn đăng ký học --</option>
-                                        <option value="cntt">Công nghệ thông tin</option>
-                                        <option value="qtkd">Quản trị kinh doanh</option>
-                                        <option value="ngonngu">Ngôn ngữ Anh</option>
-                                        <option value="marketing">Digital Marketing</option>
-                                    </select>
-
-                                    <span class="error-msg" id="majorTargetErr">
-                                        Vui lòng chọn ngành muốn học
-                                    </span>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="majorGraduated">
-                                        Ngành đã tốt nghiệp
-                                        <span class="required">*</span>
-                                    </label>
-
-                                    <input type="text" id="majorGraduated"
-                                        placeholder="Ví dụ: Cử nhân Kế toán / Kỹ thuật phần mềm">
-
-                                    <span class="error-msg" id="majorGraduatedErr">
-                                        Vui lòng nhập ngành đã tốt nghiệp
-                                    </span>
-                                </div>
-
-                                <div class="form-group signup-radio-group">
-
-                                    <label>
-                                        Đã có chứng chỉ tiếng Anh B1 chưa?
-                                        <span class="required">*</span>
-                                    </label>
-
-                                    <div class="radio-options">
-
-                                        <label class="radio-label">
-                                            <input type="radio" name="b1Certificate" value="da-co">
-                                            Đã có
-                                        </label>
-
-                                        <label class="radio-label">
-                                            <input type="radio" name="b1Certificate" value="chua-co">
-                                            Chưa có
-                                        </label>
-
-                                    </div>
-
-                                    <span class="error-msg" id="b1Err">
-                                        Vui lòng xác nhận trạng thái chứng chỉ B1
-                                    </span>
-
-                                </div>
-
-                            </form>
-
-                            <button type="submit" class="submit-btn">
-                                Đăng ký
-                            </button>
-
+                            <button type="submit" class="submit-btn">Đăng ký</button>
                         </form>
 
                     </div>
                 </div>
 
             </div>
-
         </div>
     </section>
+
     <section class="faq-branch-section">
         <h2 class="section-title">Giải Đáp Thắc Mắc</h2>
-
         <div class="faq-tree-container">
             <div class="faq-side">
                 <a href="#" class="faq-link-line">Học trái ngành có được không?</a>
@@ -494,9 +378,7 @@
                 <a href="#" class="faq-link-line">Bằng cấp có ghi chính quy không?</a>
                 <a href="#" class="faq-link-line">Học phí Thạc sĩ bao nhiêu?</a>
             </div>
-
             <div class="center-line"></div>
-
             <div class="faq-side">
                 <a href="#" class="faq-link-line">Lịch học phù hợp đi làm?</a>
                 <a href="#" class="faq-link-line">Hồ sơ bao gồm những gì?</a>
@@ -505,23 +387,21 @@
             </div>
         </div>
     </section>
+
     <div class="floating-contact">
-        <a href="https://zalo.me/4169714685581139374" target="_blank" class="float-btn float-zalo"
-            title="Chat Zalo ngay">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo"
-                style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
+        <a href="https://zalo.me/4169714685581139374" target="_blank" rel="noopener" class="float-btn float-zalo" title="Chat Zalo ngay">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Icon_of_Zalo.svg" alt="Zalo App Icon">
         </a>
 
-        <a href="tel:0963914979" class="float-btn float-phone" title="Gọi tư vấn ngay"
-            style="background-color: #22c55e; display: flex; align-items: center; justify-content: center; border-radius: 50%;">
+        <a href="tel:0963914979" class="float-btn float-phone" title="Gọi tư vấn ngay">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" style="width: 24px; height: 24px;">
-                <path
-                    d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27 11.72 11.72 0 0 0 3.67 1.21 1 1 0 0 1 .82 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 .82 11.72 11.72 0 0 0 1.21 3.67 1 1 0 0 1-.27 1.11l-2.22 2.2z" />
+                <path d="M6.62 10.79a15.15 15.15 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.27 11.72 11.72 0 0 0 3.67 1.21 1 1 0 0 1 .82 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 .82 11.72 11.72 0 0 0 1.21 3.67 1 1 0 0 1-.27 1.11l-2.22 2.2z" />
             </svg>
         </a>
 
         <button id="backToTop" class="float-btn" title="Về đầu trang">▲</button>
     </div>
+
     <div id="toastNotification" class="toast">
         <div class="toast-icon">🎉</div>
         <div class="toast-body">
@@ -529,8 +409,8 @@
             <span class="toast-time">Cách đây vài giây</span>
         </div>
     </div>
-    <footer>
 
+    <footer>
         <p>© 2026 Viện Đào Tạo Sau Đại Học. Bảo lưu mọi quyền.</p>
     </footer>
 

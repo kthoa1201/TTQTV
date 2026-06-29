@@ -1,8 +1,18 @@
 /* ==========================================================================
-   script.js - Logic Hoàn Chỉnh Cho Giao Diện Tuyển Sinh Thạc Sĩ
+   script.js - Logic Đã Tối Ưu Cho Giao Diện Tuyển Sinh Thạc Sĩ
    ========================================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+    // --- CACHE CÁC PHẦN TỬ DOM DÙNG CHUNG (Tăng tốc độ truy xuất) ---
+    const menuToggle = document.getElementById("menuToggle");
+    const navMenu = document.getElementById("navMenu");
+    const backToTopBtn = document.getElementById("backToTop");
+    const sliderWrapper = document.getElementById("sliderWrapper");
+    const toastNotification = document.getElementById("toastNotification");
+    const toastText = document.getElementById("toastText");
+    const videoModal = document.getElementById("videoModal");
+    const popupIframe = document.getElementById("popupIframe");
+    const landingForm = document.getElementById("landingForm");
 
     // ==========================================
     // 1. CHỨC NĂNG TRƯỢT MƯỢT ĐẾN CÁC PHẦN (SMOOTH SCROLL)
@@ -14,13 +24,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     };
 
-
     // ==========================================
     // 2. CHỨC NĂNG CAROUSEL SLIDER CHẠY ẢNH TỰ ĐỘNG
     // ==========================================
     let currentSlide = 0;
     const totalSlides = 3;
-    const wrapper = document.getElementById("sliderWrapper");
+    let sliderInterval;
 
     window.moveSlide = function (direction) {
         currentSlide += direction;
@@ -29,39 +38,42 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (currentSlide < 0) {
             currentSlide = totalSlides - 1;
         }
-        if (wrapper) {
-            wrapper.style.transform = `translateX(-${currentSlide * 33.333}%)`;
+        
+        if (sliderWrapper) {
+            sliderWrapper.style.transform = `translateX(-${currentSlide * 33.333}%)`;
         }
+        // Khởi động lại bộ đếm thời gian để không bị nhảy ảnh quá nhanh khi user click tay
+        resetSliderTimer();
     };
 
-    // Tự động trượt ảnh chính sau mỗi 4 giây
-    setInterval(() => {
-        moveSlide(1);
-    }, 4000);
-
+    function resetSliderTimer() {
+        clearInterval(sliderInterval);
+        sliderInterval = setInterval(() => {
+            moveSlide(1);
+        }, 4000);
+    }
+    
+    // Kích hoạt slider tự động lần đầu
+    resetSliderTimer();
 
     // ==========================================
-    // 3. ĐỒNG HỒ ĐẾM NGƯỢC TỰ ĐỘNG (COUNTDOWN)
+    // 3. ĐỒNG HỒ ĐẾM NGƯỢC (COUNTDOWN TIMER)
     // ==========================================
-    let targetDate = new Date();
-    targetDate.setDate(targetDate.getDate() + 15); // Tự động lấy ngày hiện tại + 15 ngày
-    const targetTime = targetDate.getTime();
-
-    const daysElement = document.getElementById("days");
-    const hoursElement = document.getElementById("hours");
-    const minutesElement = document.getElementById("minutes");
-    const secondsElement = document.getElementById("seconds");
+    const targetDate = new Date();
+    targetDate.setDate(targetDate.getDate() + 15); // Đặt mốc thời gian mặc định là 15 ngày tới
 
     function updateCountdown() {
         const now = new Date().getTime();
-        const difference = targetTime - now;
+        const difference = targetDate - now;
 
-        if (difference < 0) {
+        if (difference <= 0) {
             clearInterval(countdownInterval);
-            if (daysElement) daysElement.innerText = "00";
-            if (hoursElement) hoursElement.innerText = "00";
-            if (minutesElement) minutesElement.innerText = "00";
-            if (secondsElement) secondsElement.innerText = "00";
+            // Hiển thị trạng thái khi hết thời gian
+            const elements = ["days", "hours", "minutes", "seconds"];
+            elements.forEach(id => {
+                const el = document.getElementById(id);
+                if (el) el.innerText = "00";
+            });
             return;
         }
 
@@ -70,255 +82,206 @@ document.addEventListener("DOMContentLoaded", () => {
         const m = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
         const s = Math.floor((difference % (1000 * 60)) / 1000);
 
-        if (daysElement && hoursElement && minutesElement && secondsElement) {
-            daysElement.innerText = d < 10 ? "0" + d : d;
-            hoursElement.innerText = h < 10 ? "0" + h : h;
-            minutesElement.innerText = m < 10 ? "0" + m : m;
-            secondsElement.innerText = s < 10 ? "0" + s : s;
-        }
+        // Hàm thêm số 0 phía trước nếu số < 10 (Ví dụ: 09 thay vì 9)
+        const formatTime = (num) => num < 10 ? "0" + num : num;
+
+        const dEl = document.getElementById("days");
+        const hEl = document.getElementById("hours");
+        const mEl = document.getElementById("minutes");
+        const sEl = document.getElementById("seconds");
+
+        if (dEl) dEl.innerText = formatTime(d);
+        if (hEl) hEl.innerText = formatTime(h);
+        if (mEl) mEl.innerText = formatTime(m);
+        if (sEl) sEl.innerText = formatTime(s);
     }
 
-    // ĐÃ SỬA LỖI CHỮ "s" THỪA GÂY CHẾT SCRIPT Ở ĐÂY
     const countdownInterval = setInterval(updateCountdown, 1000);
-    updateCountdown();
-
+    updateCountdown(); // Chạy ngay lập tức để tránh bị trễ 1 giây đầu tiên
 
     // ==========================================
-    // 4. KIỂM TRA VALIDATE FORM ĐĂNG KÝ TƯ VẤN MỚI
+    // 4. KIỂM TRA DỮ LIỆU FORM (VALIDATION)
     // ==========================================
-    const landingForm = document.getElementById("landingForm");
     if (landingForm) {
-        landingForm.addEventListener("submit", function (e) {
-            e.preventDefault();
-            let valid = true;
+        landingForm.addEventListener("submit", (e) => {
+            e.preventDefault(); // Ngăn trang bị tải lại
+            let isValid = true;
+
+            // Thu thập dữ liệu các ô input
+            const name = document.getElementById("name");
+            const dob = document.getElementById("dob");
+            const phone = document.getElementById("phone");
+            const majorTarget = document.getElementById("majorTarget");
+            const majorGraduated = document.getElementById("majorGraduated");
+            const b1Options = document.getElementsByName("b1Certificate");
+
+            // Hàm hiển thị/ẩn lỗi nhanh
+            const toggleError = (elementErrId, condition) => {
+                const errEl = document.getElementById(elementErrId);
+                if (errEl) {
+                    errEl.style.display = condition ? "block" : "none";
+                }
+                if (condition) isValid = false;
+            };
 
             // Kiểm tra Họ Tên
-            const name = document.getElementById("name");
-            const nameErr = document.getElementById("nameErr");
-            if (name && name.value.trim() === "") {
-                if (nameErr) nameErr.style.display = "block";
-                valid = false;
-            } else if (nameErr) {
-                nameErr.style.display = "none";
-            }
+            toggleError("nameErr", !name || name.value.trim() === "");
 
-            // Kiểm tra Ngày sinh
-            const dob = document.getElementById("dob");
-            const dobErr = document.getElementById("dobErr");
-            if (dob && dob.value === "") {
-                if (dobErr) dobErr.style.display = "block";
-                valid = false;
-            } else if (dobErr) {
-                dobErr.style.display = "none";
-            }
+            // Kiểm tra Ngày Sinh
+            toggleError("dobErr", !dob || dob.value === "");
 
-            // Kiểm tra Số Điện Thoại
-            const phone = document.getElementById("phone");
-            const phoneErr = document.getElementById("phoneErr");
-            const phoneRegex = /^(0[3|5|7|8|9])+([0-9]{8})$/;
-            if (phone && !phoneRegex.test(phone.value.trim())) {
-                if (phoneErr) phoneErr.style.display = "block";
-                valid = false;
-            } else if (phoneErr) {
-                phoneErr.style.display = "none";
-            }
+            // Kiểm tra Số Điện Thoại (Regex chuẩn 10 số Việt Nam)
+            const phoneRegex = /(03|05|07|08|09)+([0-8]{1})([0-9]{7})\b/;
+            toggleError("phoneErr", !phone || !phoneRegex.test(phone.value.trim()));
 
-            // Kiểm tra Ngành muốn học
-            const majorTarget = document.getElementById("majorTarget");
-            const majorTargetErr = document.getElementById("majorTargetErr");
-            if (majorTarget && majorTarget.value === "") {
-                if (majorTargetErr) majorTargetErr.style.display = "block";
-                valid = false;
-            } else if (majorTargetErr) {
-                majorTargetErr.style.display = "none";
-            }
+            // Kiểm tra Ngành Đăng Ký Học
+            toggleError("majorTargetErr", !majorTarget || majorTarget.value === "");
 
-            // Kiểm tra Ngành đã tốt nghiệp
-            const majorGraduated = document.getElementById("majorGraduated");
-            const majorGraduatedErr = document.getElementById("majorGraduatedErr");
-            if (majorGraduated && majorGraduated.value.trim() === "") {
-                if (majorGraduatedErr) majorGraduatedErr.style.display = "block";
-                valid = false;
-            } else if (majorGraduatedErr) {
-                majorGraduatedErr.style.display = "none";
-            }
+            // Kiểm tra Ngành Đã Tốt Nghiệp
+            toggleError("majorGraduatedErr", !majorGraduated || majorGraduated.value.trim() === "");
 
-            // Kiểm tra Chứng chỉ B1
-            const b1Options = document.getElementsByName("b1Certificate");
-            const b1Err = document.getElementById("b1Err");
-            let b1Checked = false;
-            for (const option of b1Options) {
-                if (option.checked) {
-                    b1Checked = true;
+            // Kiểm tra Chứng chỉ B1 (Radio Button)
+            let isB1Checked = false;
+            for (let i = 0; i < b1Options.length; i++) {
+                if (b1Options[i].checked) {
+                    isB1Checked = true;
                     break;
                 }
             }
-            if (!b1Checked && b1Err) {
-                b1Err.style.display = "block";
-                valid = false;
-            } else if (b1Err) {
-                b1Err.style.display = "none";
-            }
+            toggleError("b1Err", !isB1Checked);
 
-            if (valid) {
-                alert("Hệ thống đã ghi nhận thông tin đăng ký thành công! Ban tư vấn tuyển sinh sẽ chủ động liên hệ lại bạn sớm nhất.");
-                this.reset();
+            // Nếu tất cả hợp lệ -> Xử lý gửi dữ liệu thành công
+            if (isValid) {
+                alert("🎉 Chúc mừng! Bạn đã gửi đăng ký xét tuyển thành công. Ban tuyển sinh sẽ liên hệ với bạn sớm nhất.");
+                landingForm.reset(); // Xóa sạch form sau khi gửi thành công
             }
         });
     }
 
-
     // ==========================================
-    // 5. XỬ LÝ ĐÓNG/MỞ KHỐI FAQS (ACCORDION)
+    // 5. HIỆU ỨNG CUỘN TRANG (BACK TO TOP & REVEAL)
     // ==========================================
-    window.toggleFaq = function (element) {
-        const faqItem = element.parentElement;
-        const isActive = faqItem.classList.contains('active');
-
-        document.querySelectorAll('.faq-item').forEach(item => {
-            item.classList.remove('active');
-        });
-
-        if (!isActive) {
-            faqItem.classList.add('active');
-        }
-    };
-
-
-    // ==========================================
-    // 6. QUẢN LÝ HIỆU ỨNG CUỘN (REVEAL SECTIONS & BACK TO TOP)
-    // ==========================================
-    const backToTopBtn = document.getElementById("backToTop");
-
-    function handleScrollEffects() {
-        // A. Hiệu ứng nội dung xuất hiện từ từ khi lướt tới
-        const reveals = document.querySelectorAll("section");
-        const windowHeight = window.innerHeight;
-        const elementVisible = 100;
-
-        reveals.forEach((reveal) => {
-            const elementTop = reveal.getBoundingClientRect().top;
-            if (elementTop < windowHeight - elementVisible) {
-                reveal.classList.add("reveal", "active");
-            }
-        });
-
-        // B. Điều khiển ẩn/hiện nút Back to Top khi chạm sát vùng đáy trang
+    window.addEventListener("scroll", () => {
+        // 5a. Hiện/Ẩn nút Lên đầu trang
         if (backToTopBtn) {
-            const totalPageHeight = document.documentElement.scrollHeight;
-            const currentViewHeight = window.innerHeight;
-            const scrolledDistance = window.scrollY || document.documentElement.scrollTop;
-
-            if (totalPageHeight - (scrolledDistance + currentViewHeight) < 400) {
+            if (window.scrollY > 300) {
                 backToTopBtn.classList.add("show");
             } else {
                 backToTopBtn.classList.remove("show");
             }
         }
-    }
 
-    // Đăng ký cuộn mượt khi click nút Back to Top (Chỉ giữ lại duy nhất 1 listener sạch)
+        // 5b. Hiệu ứng xuất hiện dần khi cuộn trang (Reveal Elements)
+        const reveals = document.querySelectorAll(".reveal");
+        const windowHeight = window.innerHeight;
+        const revealPoint = 150;
+
+        reveals.forEach(reveal => {
+            const revealTop = reveal.getBoundingClientRect().top;
+            if (revealTop < windowHeight - revealPoint) {
+                reveal.classList.add("active");
+            }
+        });
+    });
+
     if (backToTopBtn) {
-        backToTopBtn.addEventListener("click", (e) => {
-            e.preventDefault();
-            window.scrollTo({
-                top: 0,
-                behavior: "smooth"
-            });
+        backToTopBtn.addEventListener("click", () => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
         });
     }
 
-    window.addEventListener("scroll", handleScrollEffects);
-    handleScrollEffects(); // Chạy ngay lập tức khi load để quét màn hình trước
-
-
     // ==========================================
-    // 7. THÔNG BÁO ẢO ĐĂNG KÝ THÀNH CÔNG (TOAST)
+    // 6. POPUP XEM VIDEO YOUTUBE
     // ==========================================
-    const vips = [
-        "Chị Nguyễn Thị M. (Quảng Ngãi)",
-        "Anh Lê Hoàng N. (BKC)",
-        "Anh Phạm Minh T.",
-        "Chị Trần Kim T.",
-        "Anh Vũ Hoàng L."
-    ];
-
-    function showFakeNotification() {
-        const toast = document.getElementById("toastNotification");
-        const toastText = document.getElementById("toastText");
-
-        if (toast && toastText) {
-            const randomName = vips[Math.floor(Math.random() * vips.length)];
-            toastText.innerText = `${randomName} vừa đăng ký tư vấn thành công!`;
-            toast.classList.add("show");
-
-            setTimeout(() => {
-                toast.classList.remove("show");
-            }, 4000);
+    window.openVideoPopup = function () {
+        if (videoModal && popupIframe) {
+            popupIframe.src = "https://www.youtube.com/embed/KelpjDfiuB4?autoplay=1";
+            videoModal.style.display = "flex";
         }
-    }
+    };
 
-    setInterval(showFakeNotification, 20000);
-    setTimeout(showFakeNotification, 5000);
+    window.closeVideoPopup = function () {
+        if (videoModal && popupIframe) {
+            popupIframe.src = "";
+            videoModal.style.display = "none";
+        }
+    };
 
-
-    // ==========================================
-    // 8. CHỨC NĂNG CHẠY SLIDER ĐỐI TÁC TỰ ĐỘNG
-    // ==========================================
-    let partnerStage = 0;
-    const partnerTrack = document.getElementById("partnerTrack");
-
-
-    // Cho chạy tự động sau mỗi 5 giây
-    setInterval(autoSlidePartners, 5000);
-    //Menu ẩn cho điện thoại
-    document.addEventListener("DOMContentLoaded", () => {
-        const menuToggle = document.getElementById("menuToggle");
-        const navMenu = document.getElementById("navMenu");
-
-        if (menuToggle && navMenu) {
-            // Click vào nút 3 gạch thì đóng/mở menu
-            menuToggle.addEventListener("click", () => {
-                menuToggle.classList.toggle("active");
-                navMenu.classList.toggle("active");
-            });
-
-            // Tự động ĐÓNG menu lại sau khi người dùng click chọn 1 mục để cuộn trang
-            const menuItems = navMenu.querySelectorAll("a");
-            menuItems.forEach(item => {
-                item.addEventListener("click", () => {
-                    menuToggle.classList.remove("active");
-                    navMenu.classList.remove("active");
-                });
-            });
+    // Đóng popup nếu người dùng bấm ra vùng tối bên ngoài khung video
+    window.addEventListener("click", (event) => {
+        if (event.target === videoModal) {
+            closeVideoPopup();
         }
     });
 
-    function openVideoPopup() {
-        var modal = document.getElementById("videoModal");
-        var iframe = document.getElementById("popupIframe");
+    // ==========================================
+    // 7. TOAST THÔNG BÁO CHẠY NGẪU NHIÊN (FAKE REGISTER TOAST)
+    // ==========================================
+    const listNames = [
+        "Anh Nguyễn Minh T.", "Chị Phan Ngọc H.", "Anh Trần Văn K.", 
+        "Chị Lê Thúy A.", "Anh Vũ Hoàng N.", "Chị Ngô Thị M."
+    ];
+    const listMajors = [
+        "Quản trị kinh doanh", "Công nghệ thông tin", 
+        "Tâm lý học", "Ngôn ngữ Anh"
+    ];
 
-        // Gán link kèm tham số autoplay để bấm cái là chạy luôn
-        iframe.src = "https://www.youtube.com/embed/KelpjDfiuB4?autoplay=1";
-        modal.style.display = "flex";
+    function showRandomToast() {
+        if (!toastNotification || !toastText) return;
+
+        const randomName = listNames[Math.floor(Math.random() * listNames.length)];
+        const randomMajor = listMajors[Math.floor(Math.random() * listMajors.length)];
+
+        toastText.innerHTML = `${randomName} vừa đăng ký tư vấn ngành ${randomMajor} thành công!`;
+        
+        toastNotification.classList.add("show");
+
+        // Tự động ẩn thông báo sau 4 giây
+        setTimeout(() => {
+            toastNotification.classList.remove("show");
+        }, 4000);
     }
 
-    function closeVideoPopup() {
-        var modal = document.getElementById("videoModal");
-        var iframe = document.getElementById("popupIframe");
-
-        // Xóa src để tắt video hoàn toàn khi đóng popup
-        iframe.src = "";
-        modal.style.display = "none";
+    // Thiết lập hiển thị ngẫu nhiên từ 15 đến 25 giây xuất hiện 1 lần
+    function scheduleNextToast() {
+        const randomDelay = Math.floor(Math.random() * (25000 - 15000 + 1)) + 15000;
+        setTimeout(() => {
+            showRandomToast();
+            scheduleNextToast();
+        }, randomDelay);
     }
 
-    // Đóng popup nếu người dùng click ra ngoài vùng video tối
-    window.onclick = function (event) {
-        var modal = document.getElementById("videoModal");
-        if (event.target == modal) {
-            closeVideoPopup();
-        }
+    // Chạy thông báo đầu mốc sau 6 giây kể từ khi mở trang
+    setTimeout(() => {
+        showRandomToast();
+        scheduleNextToast();
+    }, 6000);
+
+    // ==========================================
+    // 8. MENU HAMBURGER ĐIỆN THOẠI RESPONSIVE
+    // ==========================================
+    if (menuToggle && navMenu) {
+        menuToggle.addEventListener("click", (e) => {
+            e.stopPropagation(); // Ngăn chặn sự kiện nổi bọt
+            menuToggle.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Tự động ĐÓNG menu lại sau khi người dùng chọn 1 mục
+        const menuItems = navMenu.querySelectorAll("a");
+        menuItems.forEach(item => {
+            item.addEventListener("click", () => {
+                menuToggle.classList.remove("active");
+                navMenu.classList.remove("active");
+            });
+        });
+
+        // Click ra ngoài vùng menu sẽ tự động đóng menu điện thoại lại
+        document.addEventListener("click", (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                menuToggle.classList.remove("active");
+                navMenu.classList.remove("active");
+            }
+        });
     }
-
-
 });
