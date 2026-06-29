@@ -65,49 +65,97 @@
     </section>
 
     <section id="nganh-dao-tao" class="programs">
-        <div class="container">
+        <div class="container slider-relative-container">
             <h2 class="section-title">Ngành Đào Tạo Trọng Điểm</h2>
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Quản Trị Giáo Dục</h3>
-                    <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Đào tạo tư duy chiến lược về xây dựng chương trình, quản lý nhân sự và vận hành tối ưu các tổ
-                        chức giáo dục hiện đại trong kỷ nguyên số.</p>
-                </div>
 
-                <div class="card">
-                    <h3>Tâm Lý Học</h3>
-                    <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Nghiên cứu sâu về hành vi và tư duy con người, trang bị kỹ năng tham vấn, trị liệu chuyên nghiệp
-                        và ứng dụng thấu hiểu tâm lý trong quản trị.</p>
-                </div>
+            <button class="prog-control-btn prev" id="progPrevBtn" aria-label="Trang trước">&#10094;</button>
+            <button class="prog-control-btn next" id="progNextBtn" aria-label="Trang sau">&#10095;</button>
 
-                <div class="card">
-                    <h3>Sư Phạm</h3>
-                    <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Nâng cao năng lực giảng dạy tích hợp công nghệ giáo dục (EdTech) tiên tiến, giúp phát triển tư
-                        duy sáng tạo và dẫn dắt thế hệ trẻ hội nhập.</p>
-                </div>
+            <div class="program-slider-viewport" id="progViewport">
+                <div class="program-slider-track" id="progTrack">
 
-                <div class="card">
-                    <h3>Kinh Tế</h3>
-                    <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Làm chủ quy luật thị trường, rèn luyện kỹ năng phân tích dữ liệu vĩ mô và hoạch định chính sách
-                        chiến lược cho doanh nghiệp hoặc tổ chức.</p>
-                </div>
+                    <div class="program-slide-group">
+                        <div class="grid-3">
+                            <div class="card">
+                                <h3>Quản Trị Giáo Dục</h3>
+                                <div class="meta">Thời gian học: 1.5 - 2 năm</div>
+                                <p>Đào tạo tư duy chiến lược về xây dựng chương trình, quản lý nhân sự và vận hành tối
+                                    ưu các tổ chức giáo dục hiện đại trong kỷ nguyên số.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Tâm Lý Học</h3>
+                                <div class="meta">Thời gian học: 1.5 - 2 năm</div>
+                                <p>Nghiên cứu sâu về hành vi và tư duy con người, trang bị kỹ năng tham vấn, trị liệu
+                                    chuyên nghiệp và ứng dụng thấu hiểu tâm lý trong quản trị.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Sư Phạm</h3>
+                                <div class="meta">Thời gian học: 1.5 - 2 năm</div>
+                                <p>Nâng cao năng lực giảng dạy tích hợp công nghệ giáo dục (EdTech) tiên tiến, giúp phát
+                                    triển tư duy sáng tạo và dẫn dắt thế hệ trẻ hội nhập.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Kinh Tế</h3>
+                                <div class="meta">Thời gian học: 1.5 - 2 năm</div>
+                                <p>Làm chủ quy luật thị trường, rèn luyện kỹ năng phân tích dữ liệu vĩ mô và hoạch định
+                                    chính sách chiến lược cho doanh nghiệp hoặc tổ chức.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Công Nghệ Thông Tin</h3>
+                                <div class="meta">Thời gian học: 1.5 - 2 năm</div>
+                                <p>Chuyên sâu về Trí tuệ nhân tạo (AI), Khoa học dữ liệu và Bảo mật hệ thống, đón đầu xu
+                                    hướng chuyển đổi số toàn cầu.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Quản Trị Kinh Doanh</h3>
+                                <div class="meta">Thời gian học: 1.5 - 2 năm</div>
+                                <p>Phát triển năng lực lãnh đạo toàn diện, tối ưu hóa mô hình kinh doanh, quản trị dòng
+                                    tiền và chiến lược marketing thực chiến.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="card">
-                    <h3>Công Nghệ Thông Tin</h3>
-                    <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Chuyên sâu về Trí tuệ nhân tạo (AI), Khoa học dữ liệu và Bảo mật hệ thống, đón đầu xu hướng
-                        chuyển đổi số toàn cầu.</p>
-                </div>
+                    <div class="program-slide-group">
+                        <div class="grid-3">
+                            <div class="card">
+                                <h3>Tài Chính Đầu Tư</h3>
+                                <div class="meta">Thời gian học: 1.5 - 2 năm</div>
+                                <p>Phân tích sâu về thị trường chứng khoán, quản trị rủi ro doanh nghiệp, hoạch định
+                                    dòng tiền và tư duy đầu tư tài chính trong bối cảnh quốc tế.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Luật Kinh Tế</h3>
+                                <div class="meta">Thời gian học: 1.5 - 2 năm</div>
+                                <p>Trang bị kiến thức pháp lý thực chiến về tranh chấp thương mại, luật doanh nghiệp, sở
+                                    hữu trí tuệ và bảo vệ lợi ích hợp pháp khi hội nhập toàn cầu.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Quản Lý Bệnh Viện</h3>
+                                <div class="meta">Thời gian học: 1.5 - 2 năm</div>
+                                <p>Chuyên ngành đặc thù kết hợp y tế và quản trị, tối ưu quy trình vận hành bệnh viện,
+                                    quản trị nguồn lực và nâng cao chất lượng dịch vụ chăm sóc.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Ngôn Ngữ Anh</h3>
+                                <div class="meta">Thời gian học: 1.5 - 2 năm</div>
+                                <p>Nâng tầm kỹ năng biên phiên dịch, nghiên cứu ngôn ngữ ứng dụng và kỹ năng giao tiếp
+                                    học thuật đỉnh cao phục vụ môi trường làm việc đa quốc gia.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Logistics & Chuỗi Cung Ứng</h3>
+                                <div class="meta">Thời gian học: 1.5 - 2 năm</div>
+                                <p>Làm chủ chuỗi cung ứng, quản trị hệ thống kho bãi, vận chuyển quốc tế và ứng dụng
+                                    công nghệ số tự động hóa dòng luân chuyển hàng hóa toàn cầu.</p>
+                            </div>
+                            <div class="card">
+                                <h3>Truyền Thông Đa Phương Tiện</h3>
+                                <div class="meta">Thời gian học: 1.5 - 2 năm</div>
+                                <p>Hoạch định chiến lược thương hiệu, quản trị khủng hoảng truyền thông, định hướng sáng
+                                    tạo nội dung số và làm chủ các nền tảng mạng xã hội.</p>
+                            </div>
+                        </div>
+                    </div>
 
-                <div class="card">
-                    <h3>Quản Trị Kinh Doanh</h3>
-                    <div class="meta">Thời gian học: 1.5 - 2 năm</div>
-                    <p>Phát triển năng lực lãnh đạo toàn diện, tối ưu hóa mô hình kinh doanh, quản trị dòng tiền và
-                        chiến lược marketing thực chiến.</p>
                 </div>
             </div>
         </div>

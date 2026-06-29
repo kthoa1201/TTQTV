@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
         } else if (currentSlide < 0) {
             currentSlide = totalSlides - 1;
         }
-        
+
         if (sliderWrapper) {
             sliderWrapper.style.transform = `translateX(-${currentSlide * 33.333}%)`;
         }
@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
             moveSlide(1);
         }, 4000);
     }
-    
+
     // Kích hoạt slider tự động lần đầu
     resetSliderTimer();
 
@@ -218,11 +218,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // 7. TOAST THÔNG BÁO CHẠY NGẪU NHIÊN (FAKE REGISTER TOAST)
     // ==========================================
     const listNames = [
-        "Anh Nguyễn Minh T.", "Chị Phan Ngọc H.", "Anh Trần Văn K.", 
+        "Anh Nguyễn Minh T.", "Chị Phan Ngọc H.", "Anh Trần Văn K.",
         "Chị Lê Thúy A.", "Anh Vũ Hoàng N.", "Chị Ngô Thị M."
     ];
     const listMajors = [
-        "Quản trị kinh doanh", "Công nghệ thông tin", 
+        "Quản trị kinh doanh", "Công nghệ thông tin",
         "Tâm lý học", "Ngôn ngữ Anh"
     ];
 
@@ -233,7 +233,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const randomMajor = listMajors[Math.floor(Math.random() * listMajors.length)];
 
         toastText.innerHTML = `${randomName} vừa đăng ký tư vấn ngành ${randomMajor} thành công!`;
-        
+
         toastNotification.classList.add("show");
 
         // Tự động ẩn thông báo sau 4 giây
@@ -284,4 +284,74 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
+    // ==========================================
+    // 10. CHỨC NĂNG SLIDER CHẠY 12 NGÀNH ĐÀO TẠO TỰ ĐỘNG & HOVER PAUSE
+    // ==========================================
+    let currentProgPage = 0;
+    const totalProgPages = 2; // Gồm 2 nhóm (mỗi nhóm 6 ngành)
+    const progTrack = document.getElementById("progTrack");
+    const progViewport = document.getElementById("progViewport");
+    const progPrevBtn = document.getElementById("progPrevBtn");
+    const progNextBtn = document.getElementById("progNextBtn");
+    let progAutoplayTimer = null;
+
+    // Hàm thực hiện chuyển trang trượt
+    function switchProgPage(pageIndex) {
+        currentProgPage = pageIndex;
+        // Trượt thanh ray qua lại 0% hoặc -50% (vì track rộng 200%)
+        if (progTrack) {
+            progTrack.style.transform = `translateX(-${currentProgPage * 50}%)`;
+        }
+    }
+
+    // Hàm tự động nhảy trang tiếp theo
+    function autoNextProgPage() {
+        let targetPage = currentProgPage + 1;
+        if (targetPage >= totalProgPages) {
+            targetPage = 0; // Quay về nhóm 1
+        }
+        switchProgPage(targetPage);
+    }
+
+    // Khởi chạy đồng hồ tự động sau mỗi 6 giây trượt 1 lần
+    function startProgAutoplay() {
+        if (!progAutoplayTimer) {
+            progAutoplayTimer = setInterval(autoNextProgPage, 6000);
+        }
+    }
+
+    // Dừng đồng hồ tự động khi người dùng tương tác
+    function stopProgAutoplay() {
+        if (progAutoplayTimer) {
+            clearInterval(progAutoplayTimer);
+            progAutoplayTimer = null;
+        }
+    }
+
+    // Gán sự kiện cho Nút bấm Tiến (Next)
+    if (progNextBtn) {
+        progNextBtn.addEventListener("click", () => {
+            let targetPage = currentProgPage + 1;
+            if (targetPage >= totalProgPages) targetPage = 0;
+            switchProgPage(targetPage);
+        });
+    }
+
+    // Gán sự kiện cho Nút bấm Lùi (Prev)
+    if (progPrevBtn) {
+        progPrevBtn.addEventListener("click", () => {
+            let targetPage = currentProgPage - 1;
+            if (targetPage < 0) targetPage = totalProgPages - 1;
+            switchProgPage(targetPage);
+        });
+    }
+
+    // XỬ LÝ LIA CHUỘT (HOVER): Đứng yên khi chạm vào, chạy lại khi bỏ ra ngoài
+    if (progViewport) {
+        progViewport.addEventListener("mouseenter", stopProgAutoplay);
+        progViewport.addEventListener("mouseleave", startProgAutoplay);
+    }
+
+    // Kích hoạt chạy tự động lần đầu tiên
+    startProgAutoplay();
 });
