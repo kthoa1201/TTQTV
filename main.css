@@ -20,6 +20,11 @@
     --white: #ffffff;
     --gray: #64748b;
     --black: #000000;
+    --orange: #e5b842;
+    --graylight: #ccc;
+    --lightwhite: #e0e0e0;
+    --lightwhite1: #bbb;
+    --blacklight: #333;
 
     /* Kích thước */
     --nav-height: 70px;
@@ -38,7 +43,7 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     background-color: var(--white);
-    padding-top: 75px;
+    padding-top: 70px;
 
 }
 
@@ -438,6 +443,186 @@ section {
     overflow: hidden;
 }
 
+/*
+form đăng ký
+*/
+.contact {
+    background: var(--primary-color);
+    padding: 60px 0;
+    color: var(--bg-light);
+    font-family: Arial, sans-serif;
+}
+
+.contact .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.registration-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.countdown-col {
+    flex: 1;
+    min-width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.main-title {
+    color: var(--orange);
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.sub-title {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--lightwhite);
+}
+
+.countdown-section {
+    margin: 5px 0 10px;
+}
+
+.countdown-section h3 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+.countdown-container {
+    display: flex;
+    gap: 12px;
+}
+
+.countdown-box {
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .15);
+    border-radius: 8px;
+    min-width: 80px;
+    padding: 15px 10px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .2);
+}
+
+.countdown-time {
+    display: block;
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--orange);
+    font-family: Courier New;
+}
+
+.countdown-label {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--lightwhite1);
+    text-transform: uppercase;
+}
+
+.benefit-list {
+    list-style: none;
+    padding: 15px 0 0;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+}
+
+.benefit-list li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.benefit-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--orange);
+    font-size: 20px;
+}
+
+.form-col {
+    flex: 1;
+    min-width: 380px;
+}
+
+.form-box {
+    background: var(--bg-light);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .2);
+    color: var(--blacklight);
+}
+
+.form-box h3 {
+    text-align: center;
+    color: var(--orange);
+    font-size: 22px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.form-group label {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--bg-light);
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.radio-options {
+    display: flex;
+    gap: 20px;
+}
+
+.submit-btn {
+    display: block;
+    margin: 10px auto 0;
+    padding: 11px 60px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(180deg, #f3d36b, #d9aa28);
+    color: var(--bg-light);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.error-msg {
+    display: none;
+    color: var(--error-color);
+    font-size: 12px;
+}
 
 /* Ép thẻ ảnh bên trong luôn phủ kín 100% diện tích chiếc nút trọn vẹn */
 .float-zalo img,
@@ -1109,7 +1294,7 @@ footer {
 
 /* Biến con số thành màu TRẮNG, nổi bật bằng hiệu ứng đổ bóng sẫm màu */
 .countdown-col .countdown-time {
-    color: var(--organge);
+    color: var(--white);
     font-size: 2rem;
     /* Hạ từ 2.2rem xuống 2rem để hiển thị hàng ngang vừa vặn, không bị nhảy dòng */
     font-weight: 800;
