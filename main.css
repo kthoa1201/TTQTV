@@ -1549,3 +1549,91 @@ footer {
     line-height: 1.6;
     margin: 0;
 }
+
+/* ==========================================================================
+   CSS SLIDER BỔ SUNG CHO KHỐI 12 NGÀNH ĐÀO TẠO
+   ========================================================================== */
+.slider-relative-container {
+    position: relative;
+    padding: 0 40px;
+    /* Tạo không gian bên sườn để đặt 2 nút mũi tên */
+}
+
+/* Khung nhìn bao ngoài ẩn phần thừa */
+.program-slider-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Thanh ray chứa cả 2 nhóm ngành */
+.program-slider-track {
+    display: flex;
+    width: 200%;
+    /* Vì có 2 nhóm, mỗi nhóm chiếm 100% của viewport */
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Hiệu ứng trượt bánh mượt mà */
+}
+
+/* Mỗi nhóm chứa 6 ngành chiếm trọn 1 trang màn hình */
+.program-slide-group {
+    width: 50%;
+    /* Tương đương 100% chiều rộng của viewport */
+    flex: 0 0 50%;
+}
+
+/* Thiết kế 2 nút mũi tên điều hướng */
+.prog-control-btn {
+    position: absolute;
+    top: 55%;
+    transform: translateY(-50%);
+    background: #ffffff;
+    color: #0066cc;
+    border: 2px solid #e2e8f0;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.prog-control-btn:hover {
+    background: #0066cc;
+    color: #ffffff;
+    border-color: #0066cc;
+    box-shadow: 0 10px 15px -3px rgba(0, 96, 204, 0.3);
+}
+
+.prog-control-btn.prev {
+    left: -10px;
+}
+
+.prog-control-btn.next {
+    right: -10px;
+}
+
+/* Responsive cho điện thoại: Nếu màn hình nhỏ quá thì ẩn nút hoặc căn chỉnh lại */
+@media (max-width: 768px) {
+    .slider-relative-container {
+        padding: 0 10px;
+    }
+
+    .prog-control-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.9rem;
+    }
+
+    .prog-control-btn.prev {
+        left: -5px;
+    }
+
+    .prog-control-btn.next {
+        right: -5px;
+    }
+}
