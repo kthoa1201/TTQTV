@@ -10,12 +10,16 @@
 
 :root {
     /* --- HỆ THỐNG MÀU SẮC (COLORS) --- */
-    --primary-color: #7dd3fc;       /* Xanh nhạt bầu trời */
-    --secondary-color: #0369a1;     /* Xanh đậm đại dương */
+    --primary-color: #7dd3fc;
+    /* Xanh nhạt bầu trời */
+    --secondary-color: #0369a1;
+    /* Xanh đậm đại dương */
     --hover-color: #0c4a6e;
-    --text-color: #0f172a;          /* Xám đen Slate cao cấp */
+    --text-color: #0f172a;
+    /* Xám đen Slate cao cấp */
     --text-color-light: #ffffff;
-    --bg-light: #f0f9ff;            /* Nền xanh băng siêu nhạt dịu mắt */
+    --bg-light: #f0f9ff;
+    /* Nền xanh băng siêu nhạt dịu mắt */
     --white: #ffffff;
     --gray: #64748b;
     --black: #000000;
@@ -31,26 +35,44 @@
 
     /* --- CẤU HÌNH KÍCH THƯỚC LẶP LẠI NHIỀU --- */
     --nav-height: 70px;
-    
+
     /* Độ bo góc (Border Radius) */
-    --radius-sm: 5px;               /* Dùng cho nút bấm cơ bản */
-    --radius-md: 6px;               /* Dùng cho các ô Input, Select */
-    --radius-lg: 8px;               /* Dùng cho Card, Slider, Khung đánh giá */
-    --radius-xl: 12px;              /* Dùng cho Form điền, Đối tác, Nút menu */
-    --radius-2xl: 16px;             /* Dùng cho Khối lớn như bộ đếm ngược */
-    --radius-full: 50%;             /* Dùng cho Avatar, Nút trôi circle */
+    --radius-sm: 5px;
+    /* Dùng cho nút bấm cơ bản */
+    --radius-md: 6px;
+    /* Dùng cho các ô Input, Select */
+    --radius-lg: 8px;
+    /* Dùng cho Card, Slider, Khung đánh giá */
+    --radius-xl: 12px;
+    /* Dùng cho Form điền, Đối tác, Nút menu */
+    --radius-2xl: 16px;
+    /* Dùng cho Khối lớn như bộ đếm ngược */
+    --radius-full: 50%;
+    /* Dùng cho Avatar, Nút trôi circle */
 
     /* Khoảng cách đệm nội dung (Padding) */
-    --pad-section: 80px 0;          /* Padding cho các Section trên PC */
-    --pad-section-mobile: 50px 0;   /* Padding cho các Section trên Mobile */
-    --pad-card: 30px;               /* Padding tiêu chuẩn của hộp, card */
-    --pad-input: 12px;              /* Padding tiêu chuẩn cho ô nhập liệu */
+    --pad-section: 80px 0;
+    /* Padding cho các Section trên PC */
+    --pad-section-mobile: 50px 0;
+    /* Padding cho các Section trên Mobile */
+    --pad-card: 30px;
+    /* Padding tiêu chuẩn của hộp, card */
+    --pad-input: 12px;
+    /* Padding tiêu chuẩn cho ô nhập liệu */
 
     /* Cỡ chữ hệ thống (Font Size) */
-    --fs-title: 2rem;               /* Tiêu đề mục lớn */
-    --fs-sub-title: 1.25rem;        /* Tiêu đề mục nhỏ/Card */
-    --fs-body: 1rem;                /* Chữ nội dung thường */
-    --fs-sm: 0.9rem;                /* Chữ nhỏ, meta, label */
+    --fs-title: 2rem;
+    /* Tiêu đề mục lớn */
+    --fs-sub-title: 1.25rem;
+    /* Tiêu đề mục nhỏ/Card */
+    --fs-body: 1rem;
+    /* Chữ nội dung thường */
+    --fs-sm: 0.9rem;
+    /* Chữ nhỏ, meta, label */
+    /* Độ rộng cố định cho mỗi ô dữ liệu khi cuộn ngang */
+    --card-width: 360px;
+    /* Khoảng cách giữa các ô */
+    --card-gap: 20px;
 
     /* Đổ bóng (Box Shadow) */
     --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
@@ -133,7 +155,15 @@ a {
     color: var(--secondary-color);
 }
 
+.register-btn-box {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+}
+
 .btn-register {
+    display: inline-block;
+    /* thêm dòng này */
     background-color: var(--btn-color);
     color: var(--white) !important;
     padding: 8px 18px;
@@ -144,6 +174,10 @@ a {
 
 .btn-register:hover {
     background-color: var(--btn-hover-color);
+}
+
+.btn-register:active {
+    transform: scale(0.95);
 }
 
 /* ==========================================================================
@@ -211,13 +245,20 @@ section {
 }
 
 @keyframes heroBgSlider {
-    0%, 28%, 100% {
+
+    0%,
+    28%,
+    100% {
         background-image: url('https://thacsi.quocteviet.edu.vn/wp-content/uploads/2026/03/Tam-ly-hoc-scaled.png');
     }
-    33%, 61% {
+
+    33%,
+    61% {
         background-image: url('https://thacsi.quocteviet.edu.vn/wp-content/uploads/2026/04/post-scaled.png');
     }
-    66%, 95% {
+
+    66%,
+    95% {
         background-image: url('https://thacsi.quocteviet.edu.vn/wp-content/uploads/2026/04/baner-Van-bang-2-scaled.png');
     }
 }
@@ -289,8 +330,13 @@ section {
     z-index: 10;
 }
 
-.prev { left: 15px; }
-.next { right: 15px; }
+.prev {
+    left: 15px;
+}
+
+.next {
+    right: 15px;
+}
 
 /* ==========================================================================
    5. KHỐI SỐ LIỆU THỐNG KÊ (COUNTERS) & NGÀNH ĐÀO TẠO
@@ -654,7 +700,8 @@ section {
 .float-btn {
     width: 55px;
     height: 55px;
-    border-radius: 50%; /* Thay biến bằng 50% để luôn đảm bảo nút tròn xoe */
+    border-radius: 50%;
+    /* Thay biến bằng 50% để luôn đảm bảo nút tròn xoe */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -663,25 +710,31 @@ section {
     padding: 0;
     border: none;
     overflow: hidden;
-    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94); /* Dùng hiệu ứng mượt hơn */
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* Dùng hiệu ứng mượt hơn */
 }
 
 /* Gán màu nền gốc cố định cho từng nút để đảm bảo không bao giờ mất màu */
 .float-phone {
-    background-color: #22c55e !important; /* Màu xanh lục */
+    background-color: #22c55e !important;
+    /* Màu xanh lục */
     animation: pulsePhone 2s infinite;
 }
 
 .float-zalo {
-    background-color: #0068ff !important; /* Màu xanh Zalo chuẩn */
+    background-color: #0068ff !important;
+    /* Màu xanh Zalo chuẩn */
     animation: pulseZalo 2s infinite;
 }
 
 /* ✨ SỬA LỖI XUNG ĐỘT: Khi hover vào, ngắt hẳn animation để tránh giật lag khung hình */
 .float-btn:hover {
-    animation: none !important; /* Dừng hẳn nhịp đập */
-    transform: scale(1.15); /* Phóng to tĩnh 15% mượt mà vững chãi */
-    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35); /* Đổ bóng sâu tạo cảm giác nút nổi hẳn lên */
+    animation: none !important;
+    /* Dừng hẳn nhịp đập */
+    transform: scale(1.15);
+    /* Phóng to tĩnh 15% mượt mà vững chãi */
+    box-shadow: 0 10px 25px rgba(15, 23, 42, 0.35);
+    /* Đổ bóng sâu tạo cảm giác nút nổi hẳn lên */
 }
 
 .float-zalo img,
@@ -696,24 +749,33 @@ section {
    HIỆU ỨNG NHỊP ĐẬP (PULSE) ĐÃ ĐƯỢC CÂN ĐỐI
    ========================================== */
 @keyframes pulsePhone {
-    0%, 100% { 
-        transform: scale(1); 
-        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); 
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
     }
-    70% { 
-        transform: scale(1.05); /* Tăng lên 1.05 cho nhịp đập rõ ràng hơn chút */
-        box-shadow: 0 0 0 15px rgba(34, 197, 94, 0); /* Vòng hào quang lan rộng 15px rồi tan biến */
+
+    70% {
+        transform: scale(1.05);
+        /* Tăng lên 1.05 cho nhịp đập rõ ràng hơn chút */
+        box-shadow: 0 0 0 15px rgba(34, 197, 94, 0);
+        /* Vòng hào quang lan rộng 15px rồi tan biến */
     }
 }
 
 @keyframes pulseZalo {
-    0%, 100% { 
-        transform: scale(1); 
-        box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.6); /* Đồng bộ về hệ màu xanh Zalo bạn đang dùng */
+
+    0%,
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 104, 255, 0.6);
+        /* Đồng bộ về hệ màu xanh Zalo bạn đang dùng */
     }
-    70% { 
-        transform: scale(1.05); 
-        box-shadow: 0 0 0 15px rgba(0, 104, 255, 0); 
+
+    70% {
+        transform: scale(1.05);
+        box-shadow: 0 0 0 15px rgba(0, 104, 255, 0);
     }
 }
 
@@ -739,12 +801,14 @@ section {
 }
 
 .partner-slider::before {
-    top: 0; left: 0;
+    top: 0;
+    left: 0;
     background: linear-gradient(to right, var(--bg-light) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
 .partner-slider::after {
-    top: 0; right: 0;
+    top: 0;
+    right: 0;
     background: linear-gradient(to left, var(--bg-light) 0%, rgba(255, 255, 255, 0) 100%);
 }
 
@@ -799,14 +863,21 @@ section {
 }
 
 @keyframes infiniteScroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 /* ==========================================================================
    10. HỎI ĐÁP (FAQS) & CAM KẾT (COMMITMENTS) & LỘ TRÌNH
    ========================================================================== */
-.commitments { background-color: var(--bg-light); }
+.commitments {
+    background-color: var(--bg-light);
+}
 
 .commit-card {
     background: var(--white);
@@ -845,7 +916,10 @@ section {
     margin: 0 auto;
 }
 
-.faq-side { display: flex; flex-direction: column; }
+.faq-side {
+    display: flex;
+    flex-direction: column;
+}
 
 .faq-link-line {
     padding: 20px 30px;
@@ -933,7 +1007,9 @@ section {
     transition: transform 0.3s ease;
 }
 
-.video-placeholder:hover { transform: scale(1.02); }
+.video-placeholder:hover {
+    transform: scale(1.02);
+}
 
 .play-icon {
     font-size: 3rem;
@@ -958,13 +1034,16 @@ section {
     transition: all 0.3s ease;
 }
 
-#backToTop.show { display: flex !important; }
+#backToTop.show {
+    display: flex !important;
+}
 
 #backToTop:hover {
     background-color: var(--btn-hover-color);
     transform: scale(1.1);
     box-shadow: 0 6px 15px rgba(255, 159, 0, 0.4);
 }
+
 .toast {
     position: fixed;
     bottom: 30px;
@@ -983,16 +1062,26 @@ section {
     width: 320px;
 }
 
-.toast.show { left: 30px; }
-.toast-icon { font-size: 1.5rem; color: var(--btn-hover-color); }
-
-.toast-body p { 
-    font-size: var(--fs-sm);
-    font-weight: normal; 
-    margin: 0; 
+.toast.show {
+    left: 30px;
 }
 
-.toast-time { font-size: 0.75rem; color: var(--gray); }
+.toast-icon {
+    font-size: 1.5rem;
+    color: var(--btn-hover-color);
+}
+
+.toast-body p {
+    font-size: var(--fs-sm);
+    font-weight: normal;
+    margin: 0;
+}
+
+.toast-time {
+    font-size: 0.75rem;
+    color: var(--gray);
+}
+
 footer {
     background: var(--black);
     color: var(--gray);
@@ -1009,6 +1098,7 @@ footer {
     .slide-btn:hover {
         background: rgba(3, 105, 161, 0.85);
     }
+
     .menu-toggle {
         display: none;
     }
@@ -1025,12 +1115,26 @@ footer {
 }
 
 @media (max-width: 768px) {
-    section { padding: var(--pad-section-mobile); }
-    .hero h1 { font-size: var(--fs-title); }
-    .hero p { font-size: var(--fs-body); }
-    .video-placeholder { height: 200px; }
+    section {
+        padding: var(--pad-section-mobile);
+    }
 
-    .nav-container .logo { display: none !important; }
+    .hero h1 {
+        font-size: var(--fs-title);
+    }
+
+    .hero p {
+        font-size: var(--fs-body);
+    }
+
+    .video-placeholder {
+        height: 200px;
+    }
+
+    .nav-container .logo {
+        display: none !important;
+    }
+
     .nav-container {
         display: flex;
         justify-content: flex-end;
@@ -1038,6 +1142,7 @@ footer {
         width: 100%;
         padding: 0 20px;
     }
+
     .menu-toggle {
         display: flex;
         flex-direction: column;
@@ -1049,6 +1154,7 @@ footer {
         cursor: pointer;
         z-index: 1001;
     }
+
     .menu-toggle .bar {
         width: 100%;
         height: 3px;
@@ -1056,13 +1162,23 @@ footer {
         border-radius: 2px;
         transition: all 0.3s ease;
     }
-    .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
-    .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
-    .menu-toggle.active .bar:nth-child(3) { transform: translateY(-9px) rotate(-45deg); }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
 
     .nav-menu {
         position: absolute;
-        top: 70px; left: 0;
+        top: 70px;
+        left: 0;
         width: 100%;
         background-color: var(--white);
         box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
@@ -1075,27 +1191,79 @@ footer {
         pointer-events: none;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
+
     .nav-menu.active {
         transform: translateY(0);
         opacity: 1;
         pointer-events: auto;
     }
-    .nav-menu li { width: 100%; text-align: center; }
-    .nav-menu li a { display: block; padding: 10px 0; width: 100%; }
-    .nav-menu li .btn-register { display: inline-block; width: auto; padding: 10px 30px; margin: 5px auto; }
 
-    .about-content { flex-direction: column; gap: 25px; }
-    .about-text { width: 100%; min-width: 100%; }
-    .slider-container { width: 100%; min-width: 100%; height: 350px; margin-top: 20px; }
+    .nav-menu li {
+        width: 100%;
+        text-align: center;
+    }
 
-    .countdown-container { gap: 10px; }
-    .countdown-box { min-width: 70px; padding: 8px 12px; }
-    .countdown-time { font-size: 1.4rem; }
-    .form-box { padding: 25px 20px; }
+    .nav-menu li a {
+        display: block;
+        padding: 10px 0;
+        width: 100%;
+    }
 
-    .partner-item { width: 160px; padding: 0 8px; }
-    .partner-box { height: 70px; font-size: 0.85rem; }
-    .floating-contact { bottom: 20px; right: 20px; }
+    .nav-menu li .btn-register {
+        display: inline-block;
+        width: auto;
+        padding: 10px 30px;
+        margin: 5px auto;
+    }
+
+    .about-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .about-text {
+        width: 100%;
+        min-width: 100%;
+    }
+
+    .slider-container {
+        width: 100%;
+        min-width: 100%;
+        height: 350px;
+        margin-top: 20px;
+    }
+
+    .countdown-container {
+        gap: 10px;
+    }
+
+    .countdown-box {
+        min-width: 70px;
+        padding: 8px 12px;
+    }
+
+    .countdown-time {
+        font-size: 1.4rem;
+    }
+
+    .form-box {
+        padding: 25px 20px;
+    }
+
+    .partner-item {
+        width: 160px;
+        padding: 0 8px;
+    }
+
+    .partner-box {
+        height: 70px;
+        font-size: 0.85rem;
+    }
+
+    .floating-contact {
+        bottom: 20px;
+        right: 20px;
+    }
 }
 
 /* ==========================================================================
@@ -1137,7 +1305,7 @@ footer {
     height: 0;
     overflow: hidden;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     background: #000;
 }
 
@@ -1220,4 +1388,102 @@ footer {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+}
+
+/* Khung bao bọc bên ngoài */
+.scroll-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+    /* Hoặc đổi màu theo giao diện của bạn */
+    font-family: Arial, sans-serif;
+}
+
+.scroll-section .section-title {
+    text-align: center;
+    color: #54b2e6;
+    /* Màu xanh giống hình mẫu */
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* CONTAINER CHÍNH: Kích hoạt chế độ cuộn ngang mượt mà */
+.horizontal-scroll-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    /* Ép các thẻ nằm trên cùng 1 hàng, không cho xuống dòng */
+    gap: var(--card-gap);
+    overflow-x: auto;
+    /* Tự động xuất hiện thanh cuộn ngang khi thừa dữ liệu */
+    overflow-y: hidden;
+    /* Chặn cuộn dọc */
+    padding: 20px 10px;
+    /* Thêm khoảng trống để không bị che khuất phần đổ bóng (shadow) */
+
+    /* Trải nghiệm cuộn mượt mà (chỉ số vuốt trên Mobile) */
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+
+    /* Tính năng hút dính: Khi cuộn, các ô sẽ tự động khớp vào khung nhìn */
+    scroll-linecap: x mandatory;
+}
+
+/* Ẩn thanh cuộn mặc định của trình duyệt để nhìn tinh tế hơn */
+.horizontal-scroll-container::-webkit-scrollbar {
+    height: 6px;
+    /* Độ dày thanh cuộn nằm ngang */
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+/* ĐỊNH DẠNG CÁC Ô THẺ ĐỨNG (Giữ nguyên form thiết kế của bạn) */
+.scroll-card {
+    flex: 0 0 var(--card-width);
+    /* Không cho co giãn, giữ đúng độ rộng cố định */
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 25px;
+    box-sizing: border-box;
+    border-top: 4px solid #1d7bb6;
+    /* Viền nhấn phía trên */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    /* Đổ bóng nhẹ */
+
+    /* Điểm dừng khi cuộn */
+    -ms-scroll-limit: start;
+}
+
+/* Chi tiết nội dung phía trong Thẻ */
+.scroll-card h3 {
+    color: #1d7bb6;
+    font-size: 20px;
+    margin: 0 0 8px 0;
+}
+
+.scroll-card .duration {
+    font-size: 13px;
+    color: #666;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.scroll-card .description {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
 }
